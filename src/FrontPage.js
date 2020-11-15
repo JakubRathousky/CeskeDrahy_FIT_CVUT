@@ -14,7 +14,7 @@ export default class FrontPage extends React.Component {
         from: "",
         to: "",
         date: new Date(),
-        direction: 0,
+        direction: '1',
         time: (new Date()).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
     }
     constructor() {
@@ -27,9 +27,13 @@ export default class FrontPage extends React.Component {
         }
     }
     updateForm = (formState) => {
+        let history = this.state.searchHistory.find(x => x.to == formState.to && x.from == formState.from);
+        const searchHistory = this.state.searchHistory;
+        if (!history)
+            searchHistory.push({from: formState.from, to: formState.to});
         this.setState({
             formState: formState,
-            searchHistory: [...this.state.searchHistory, {from: formState.from, to: formState.to}]
+            searchHistory: searchHistory
         });
     }
     showForm = (isCleanLoad) => {

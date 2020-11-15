@@ -24,6 +24,7 @@ import Skeleton from "@material-ui/lab/Skeleton";
 import ImportExportIcon from '@material-ui/icons/ImportExport';
 import SearchIcon from '@material-ui/icons/Search';
 import Box from '@material-ui/core/Box';
+import IconButton from '@material-ui/core/IconButton';
 import { KeyboardDatePicker, MuiPickersUtilsProvider, } from '@material-ui/pickers';
 
 
@@ -100,7 +101,6 @@ export default class Form extends React.Component {
     }
 
   render () {
-      console.log(this.state);
       return (
             <Grid container >
                 <Grid item xs={12} sm={6} md={3}>
@@ -146,7 +146,9 @@ export default class Form extends React.Component {
                                         </Grid>
                                     </Grid>
                                     <Grid item xs={1} align="center">
-                                        <ImportExportIcon fontSize="large" xs={12} onClick={() => { this.setState({from: this.state.to, to: this.state.from}) }} />
+                                        <Button>
+                                            <ImportExportIcon fontSize="large" xs={12} onClick={() => { this.setState({from: this.state.to, to: this.state.from}) }} />
+                                        </Button>
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -185,6 +187,7 @@ export default class Form extends React.Component {
                                 </Box>
                                 <Grid container spacing={1}>
                                     <Grid item sm={3} align="left">
+                                    {this.state.hasError && !this.state.time && <FormHelperText error>Toto je povinná položka!</FormHelperText>}
                                     </Grid>
                                     <Grid item sm={9}>
                                     {this.state.hasError && !this.state.direction && <FormHelperText error>Toto je povinná položka!</FormHelperText>}
@@ -192,8 +195,7 @@ export default class Form extends React.Component {
                                 </Grid>
                                 <Grid container spacing={1}>
                                     <Grid item sm={3} align="left">
-                                    {this.state.hasError && !this.state.time && <FormHelperText error>Toto je povinná položka!</FormHelperText>}
-                                    <TextField
+                                   <TextField
                                             id="time"
                                             type="time"
                                             value={this.state.time}
