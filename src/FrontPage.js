@@ -26,6 +26,12 @@ export default class FrontPage extends React.Component {
             showScene: 1
         }
     }
+    updateForm = (formState) => {
+        this.setState({
+            formState: formState,
+            searchHistory: [...this.state.searchHistory, {from: formState.from, to: formState.to}]
+        });
+    }
     showForm = (isCleanLoad) => {
         if (isCleanLoad)
             this.setState({formState: this.formInit, showScene: 1 })
@@ -45,7 +51,7 @@ export default class FrontPage extends React.Component {
                         formState={this.state.formState}
                         buyHistory={this.state.buyHistory}
                         searchHistory={this.state.searchHistory}
-                        updateForm={(formState) => this.setState({formState: formState})} />
+                        updateForm={this.updateForm} />
         else if (this.state.showScene === 2)
             return <Result showForm={this.showForm} showCart={this.showCart} />
         else if (this.state.showScene === 3)
