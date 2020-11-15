@@ -146,7 +146,7 @@ export default class Form extends React.Component {
                                         </Grid>
                                     </Grid>
                                     <Grid item xs={1} align="center">
-                                        <ImportExportIcon fontSize="large" xs={12} onClick={() => { console.log('onClick'); }} />
+                                        <ImportExportIcon fontSize="large" xs={12} onClick={() => { this.setState({from: this.state.to, to: this.state.from}) }} />
                                     </Grid>
                                 </Grid>
                             </Grid>
