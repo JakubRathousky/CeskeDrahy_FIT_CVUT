@@ -1,38 +1,17 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
-import Divider from "@material-ui/core/Divider";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import TextField from "@material-ui/core/TextField";
-import ListItem from "@material-ui/core/CardActions";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import List from "@material-ui/core/List";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import DateFnsUtils from "@date-io/date-fns";
-import Container from "@material-ui/core/Container";
-import Skeleton from "@material-ui/lab/Skeleton";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import TrainIcon from "@material-ui/icons/Train";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import Box from "@material-ui/core/Box";
-import {
-  KeyboardDatePicker,
-  MuiPickersUtilsProvider,
-} from "@material-ui/pickers";
+import { getConnections } from '../data/connections';
+import ResultCard from './ResultCard';
 
 export default class Result extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     const currentDate = new Date();
     this.state = {
       from: "",
@@ -47,11 +26,95 @@ export default class Result extends React.Component {
         minute: "2-digit",
       }),
       hasError: false,
+      before: null,
+      actual: null,
+      future: []
     };
   }
 
+  componentDidMount() {
+    this.findResults();
+  }
+
+  findResults = () => {
+    let connections = getConnections(this.props.formState.from, this.props.formState.to);
+    let before;
+    let actual = null;
+    let future = [];
+    let result;
+
+    if (this.props.formState.direction === '1')
+    {
+      result = connections.sort((x, y) => new Date(x.odjezd) > new Date(y.odjezd) ? -1 : 1);
+      result.forEach(x => {
+        if (new Date("1970-01-01 "+x.odjezd) >= new Date("1970-01-01 "+this.props.formState.time) && actual == null)
+        {
+          actual = x;
+        } else if(new Date("1970-01-01 "+x.odjezd) > new Date("1970-01-01 "+this.props.formState.time) && future.length < 2) {
+          future.push(x);
+        } else if(new Date("1970-01-01 "+x.odjezd) < new Date("1970-01-01 "+this.props.formState.time)){
+          before = x;
+        }
+      })
+    }
+    else
+    {
+      result = connections.sort((x, y) => new Date(x.prijezd) > new Date(y.prijezd) ? -1 : 1);
+      console.log(result);
+      result.forEach(x => {
+        if (new Date("1970-01-01 "+x.prijezd) >= new Date("1970-01-01 "+this.props.formState.time) && actual == null)
+        {
+          actual = x;
+        }
+        else if (new Date("1970-01-01 "+x.prijezd) <= new Date("1970-01-01 "+this.props.formState.time))
+        {
+          before = x;
+        } else if (future.length < 2) {
+          future.push(x);
+        }
+      })
+    }
+    let nextDay = new Date();
+    if (before == null) {
+      nextDay.setDate(this.props.formState.date.getDate() - 1);
+      before = result[result.length - 1]; before.vlak.forEach(x => x.stanice.forEach(y => y.alteredTime = this.setTime(y.cas, nextDay)));
+    } else {
+      before.vlak.forEach(x => x.stanice.forEach(y => y.alteredTime = this.setTime(y.cas, this.props.formState.date)));
+    }
+
+    if (actual == null) {
+      nextDay.setDate(this.props.formState.date.getDate() + 1);
+      actual = result[0]; actual.vlak.forEach(x => x.stanice.forEach(y => y.alteredTime = this.setTime(y.cas, nextDay)));
+      future.push(result[1]); future[0].vlak.forEach(x => x.stanice.forEach(y => y.alteredTime = this.setTime(y.cas, nextDay)));
+      future.push(result[2]); future[1].vlak.forEach(x => x.stanice.forEach(y => y.alteredTime = this.setTime(y.cas, nextDay)));
+    } else {
+      actual.vlak.forEach(x => x.stanice.forEach(y => y.alteredTime = this.setTime(y.cas, this.props.formState.date)));
+
+      if (future.length !== 0) {
+        future[0]?.vlak.forEach(x => x.stanice.forEach(y => y.alteredTime = this.setTime(y.cas, this.props.formState.date)));
+        future[1]?.vlak.forEach(x => x.stanice.forEach(y => y.alteredTime = this.setTime(y.cas, this.props.formState.date)));
+      }
+    }
+    if (future.length === 0) {
+      nextDay.setDate(this.props.formState.date.getDate() + 1);
+      future.push(result[0]); future[0].vlak.forEach(x => x.stanice.forEach(y => y.alteredTime = this.setTime(y.cas, nextDay)));
+      future.push(result[1]); future[1].vlak.forEach(x => x.stanice.forEach(y => y.alteredTime = this.setTime(y.cas, nextDay)));
+    }
+
+    this.setState({before: before, actual: actual, future: future})
+  }
+
+  dateFormat = (date) => {
+    return (date.getDate()) + 
+    "." +  (date.getMonth() + 1) +
+    "." +  date.getFullYear();
+  }
+
+  setTime = (time, nextDay) => {
+    return time + ", " + this.dateFormat(nextDay);
+  }
+
   render() {
-    console.log(this.state);
     return (
       <Grid container>
         <Grid item xs={12} sm={6} md={2}></Grid>
@@ -80,343 +143,12 @@ export default class Result extends React.Component {
               </Grid>
             </Grid>
             <Grid item xs={12}>
-              <Box border={1} p={1} borderRadius={16}>
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}>
-                        <AccessTimeIcon />
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={5}>
-                        <Typography component="p">
-                          <Typography>27 min</Typography>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={3}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}>
-                        <Typography component="p">
-                          Aktuální zpoždění: 245 m
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center">
-                    <Box border={1} borderRadius={16}>
-                      <Button type="submit" size={"large"} onClick={this.onSearch}>
-                        Detail
-                      </Button>
-                    </Box>
-                  </Grid>
-                </Grid>
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}>
-                        <TrainIcon />
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={8}>
-                        <Typography>
-                          <Box  fontWeight="fontWeightBold">R 158 Krakomor</Box>
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center"></Grid>
-                </Grid>
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}></Grid>
-                      <Grid item xs={12} sm={6} md={5}>
-                        <Typography>
-                          <Typography>Říčany</Typography>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={3}>
-                        <Typography>
-                          <Typography>6:55</Typography>
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center"></Grid>
-                </Grid>
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}></Grid>
-                      <Grid item xs={12} sm={6} md={5}>
-                        <ArrowDropDownIcon fontSize="large" />
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={3}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center"></Grid>
-                </Grid>
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}></Grid>
-                      <Grid item xs={12} sm={6} md={5}>
-                        <Typography>
-                          <Typography>Praha, hl. n</Typography>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={3}>
-                        7:12
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center">
-                    <Box border={1} borderRadius={16}>
-                      <Button type="submit" size={"large"} onClick={this.props.showCart}>
-                        40,- Kč
-                      </Button>
-                    </Box>
-                  </Grid>
-                </Grid>
-              </Box>
+              <ResultCard connection={this.state.before} isActual={false}/>
             </Grid>
             <Grid item xs={12}>
-              <Box border={1} p={1} borderRadius={16}>
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}>
-                        <AccessTimeIcon />
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={5}>
-                        <Typography component="p">
-                          <Typography>27 min</Typography>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={3}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}>
-                        <Typography component="p">
-                          Aktuální zpoždění: 5 dnů
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center">
-                    <Box border={1} borderRadius={16}>
-                      <Button
-                        type="submit"
-                        size={"large"}
-                        onClick={this.onSearch} 
-                      >
-                        Detail
-                      </Button>
-                    </Box>
-                  </Grid>
-                </Grid>
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}>
-                        <TrainIcon />
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={5}>
-                        <Typography>
-                          <Box fontWeight="fontWeightBold">R9587</Box>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={3}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center"></Grid>
-                </Grid>
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}></Grid>
-                      <Grid item xs={12} sm={6} md={5}>
-                        <Typography>
-                          <Typography>Říčany</Typography>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={3}>
-                        <Typography>
-                          <Typography>6:55</Typography>
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center"></Grid>
-                </Grid>
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}></Grid>
-                      <Grid item xs={12} sm={6} md={5}>
-                        <ArrowDropDownIcon fontSize="large" />
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={3}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center"></Grid>
-                </Grid>
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}></Grid>
-                      <Grid item xs={12} sm={6} md={5}>
-                        <Typography>
-                          <Typography>Praha, hl. n</Typography>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={3}>
-                      <Typography>
-                          <Typography>7:12</Typography>
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center"></Grid>
-                </Grid>{" "}
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}>
-                        <TrainIcon />
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={5}>
-                        <Typography>
-                          <Box fontWeight="fontWeightBold">R9587</Box>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={3}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center"></Grid>
-                </Grid>
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}></Grid>
-                      <Grid item xs={12} sm={6} md={5}>
-                        <Typography>
-                          <Typography>Říčany</Typography>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={3}>
-                        <Typography>
-                          <Typography>6:55</Typography>
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center"></Grid>
-                </Grid>
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}></Grid>
-                      <Grid item xs={12} sm={6} md={5}>
-                        <ArrowDropDownIcon fontSize="large" />
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={3}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center"></Grid>
-                </Grid>
-                <Grid container>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={4}></Grid>
-                      <Grid item xs={12} sm={6} md={5}>
-                        <Typography>
-                          <Typography>Praha, hl. n</Typography>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={3}>
-                      <Typography>
-                          <Typography>7:12</Typography>
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={5}>
-                    <Grid container spacing={3}>
-                      <Grid item xs={12}></Grid>
-                    </Grid>
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={3} align="center">
-                    <Box border={1} borderRadius={16}>
-                      <Button
-                        type="submit"
-                        size={"large"}
-                        onClick={this.props.showCart} >
-                        40,- Kč
-                      </Button>
-                    </Box>
-                  </Grid>
-                </Grid>
-              </Box>
+              <ResultCard connection={this.state.actual} isActual={true}/>
             </Grid>
+              {this.state.future.map(x => (<Grid item xs={12}><ResultCard connection={x} isActual={false}/></Grid>))}
           </Grid>
         </Grid>
         <Grid item xs={12} sm={6} md={2}></Grid>

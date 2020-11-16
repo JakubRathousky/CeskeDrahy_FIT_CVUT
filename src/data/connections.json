@@ -1,0 +1,1106 @@
+[
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Říčany",
+    "odjezd": "8:05",
+    "prijezd": "8:32",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2521",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "8:05" },
+          { "nazev": "Praha - Vršovice", "cas": "8:10" },
+          { "nazev": "Praha - Strašnice", "cas": "8:14" },
+          { "nazev": "Praha - Hostivař", "cas": "8:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "8:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "8:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "8:29" },
+          { "nazev": "Říčany", "cas": "8:32" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Říčany",
+    "odjezd": "8:35",
+    "prijezd": "9:02",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2523",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "8:35" },
+          { "nazev": "Praha - Vršovice", "cas": "8:40" },
+          { "nazev": "Praha - Strašnice", "cas": "8:40" },
+          { "nazev": "Praha - Hostivař", "cas": "8:50" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "8:52" },
+          { "nazev": "Praha - Uhřiněves", "cas": "8:56" },
+          { "nazev": "Říčany", "cas": "9:02" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Říčany",
+    "odjezd": "9:05",
+    "prijezd": "9:32",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2525",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "9:05" },
+          { "nazev": "Praha - Vršovice", "cas": "9:10" },
+          { "nazev": "Praha - Strašnice", "cas": "9:14" },
+          { "nazev": "Praha - Hostivař", "cas": "9:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "9:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "9:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "9:29" },
+          { "nazev": "Říčany", "cas": "9:32" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Říčany",
+    "odjezd": "10:05",
+    "prijezd": "10:32",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2529",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "10:05" },
+          { "nazev": "Praha - Vršovice", "cas": "10:10" },
+          { "nazev": "Praha - Strašnice", "cas": "10:14" },
+          { "nazev": "Praha - Hostivař", "cas": "10:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "10:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "10:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "10:29" },
+          { "nazev": "Říčany", "cas": "10:32" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Říčany",
+    "odjezd": "12:05",
+    "prijezd": "12:32",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2537",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "12:05" },
+          { "nazev": "Praha - Vršovice", "cas": "12:10" },
+          { "nazev": "Praha - Strašnice", "cas": "12:14" },
+          { "nazev": "Praha - Hostivař", "cas": "12:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "12:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "12:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "12:29" },
+          { "nazev": "Říčany", "cas": "12:32" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Říčany",
+    "odjezd": "14:05",
+    "prijezd": "14:32",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2541",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "14:05" },
+          { "nazev": "Praha - Vršovice", "cas": "14:10" },
+          { "nazev": "Praha - Strašnice", "cas": "14:14" },
+          { "nazev": "Praha - Hostivař", "cas": "14:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "14:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "14:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "14:29" },
+          { "nazev": "Říčany", "cas": "14:32" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Říčany",
+    "odjezd": "16:05",
+    "prijezd": "16:32",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2547",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "16:05" },
+          { "nazev": "Praha - Vršovice", "cas": "16:10" },
+          { "nazev": "Praha - Strašnice", "cas": "16:14" },
+          { "nazev": "Praha - Hostivař", "cas": "16:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "16:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "16:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "16:29" },
+          { "nazev": "Říčany", "cas": "16:32" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Říčany",
+    "odjezd": "18:05",
+    "prijezd": "18:32",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2551",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "18:05" },
+          { "nazev": "Praha - Vršovice", "cas": "18:10" },
+          { "nazev": "Praha - Strašnice", "cas": "18:14" },
+          { "nazev": "Praha - Hostivař", "cas": "18:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "18:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "18:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "18:29" },
+          { "nazev": "Říčany", "cas": "18:32" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Říčany",
+    "odjezd": "20:05",
+    "prijezd": "20:32",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2553",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "20:05" },
+          { "nazev": "Praha - Vršovice", "cas": "20:10" },
+          { "nazev": "Praha - Strašnice", "cas": "20:14" },
+          { "nazev": "Praha - Hostivař", "cas": "20:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "20:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "20:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "20:29" },
+          { "nazev": "Říčany", "cas": "20:32" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "start": "Říčany",
+    "cil": "Praha, hl.n.",
+    "odjezd": "9:25",
+    "prijezd": "9:52",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2522",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "9:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "9:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "9:32" },
+          { "nazev": "Praha - Vršovice", "cas": "9:48" },
+          { "nazev": "Praha - hl.n.", "cas": "9:52" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Říčany",
+    "cil": "Praha, hl.n.",
+    "odjezd": "9:55",
+    "prijezd": "10:22",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2524",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "9:55" },
+          { "nazev": "Praha - Kolovraty", "cas": "9:58" },
+          { "nazev": "Praha - Uhřiněves", "cas": "10:02" },
+          { "nazev": "Praha - Vršovice", "cas": "10:18" },
+          { "nazev": "Praha - hl.n.", "cas": "10:22" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Říčany",
+    "cil": "Praha, hl.n.",
+    "odjezd": "10:25",
+    "prijezd": "10:52",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2526",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "10:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "10:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "10:32" },
+          { "nazev": "Praha - Vršovice", "cas": "10:48" },
+          { "nazev": "Praha - hl.n.", "cas": "10:52" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Říčany",
+    "cil": "Praha, hl.n.",
+    "odjezd": "12:25",
+    "prijezd": "12:52",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2528",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "12:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "12:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "12:32" },
+          { "nazev": "Praha - Vršovice", "cas": "12:48" },
+          { "nazev": "Praha - hl.n.", "cas": "12:52" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Říčany",
+    "cil": "Praha, hl.n.",
+    "odjezd": "14:25",
+    "prijezd": "14:52",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2530",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "14:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "14:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "14:32" },
+          { "nazev": "Praha - Vršovice", "cas": "14:48" },
+          { "nazev": "Praha - hl.n.", "cas": "14:52" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Říčany",
+    "cil": "Praha, hl.n.",
+    "odjezd": "18:25",
+    "prijezd": "18:52",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2534",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "18:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "18:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "18:32" },
+          { "nazev": "Praha - Vršovice", "cas": "18:48" },
+          { "nazev": "Praha - hl.n.", "cas": "18:52" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Říčany",
+    "cil": "Praha, hl.n.",
+    "odjezd": "20:25",
+    "prijezd": "20:52",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2540",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "20:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "20:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "20:32" },
+          { "nazev": "Praha - Vršovice", "cas": "20:48" },
+          { "nazev": "Praha - hl.n.", "cas": "20:52" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Říčany",
+    "cil": "Praha, hl.n.",
+    "odjezd": "21:25",
+    "prijezd": "21:52",
+    "doba": "27 minut",
+    "vlak": [
+      {
+        "kod": "OS 2544",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "21:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "21:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "21:32" },
+          { "nazev": "Praha - Vršovice", "cas": "21:48" },
+          { "nazev": "Praha - hl.n.", "cas": "21:52" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Beroun",
+    "odjezd": "8:13",
+    "prijezd": "8:53",
+    "doba": "40 minut",
+    "vlak": [
+      {
+        "kod": "R772 Berounka",
+        "sluzby": ["kolo", "vozicek", "wifi", "mistenka"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "8:21" },
+          { "nazev": "Praha - Smíchov", "cas": "8:21" },
+          { "nazev": "Beroun", "cas": "8:53" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Beroun",
+    "odjezd": "8:18",
+    "prijezd": "9:11",
+    "doba": "53 minut",
+    "vlak": [
+      {
+        "kod": "OS 8820",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "8:18" },
+          { "nazev": "Praha - Smíchov", "cas": "8:25" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "8:34" },
+          { "nazev": "Praha - Radotín", "cas": "8:39" },
+          { "nazev": "Praha - černošice", "cas": "8:44" },
+          { "nazev": "Všenory", "cas": "8:49" },
+          { "nazev": "Řevnice", "cas": "8:55" },
+          { "nazev": "Karlštejn", "cas": "9:02" },
+          { "nazev": "Srbsko", "cas": "9:06" },
+          { "nazev": "Beroun", "cas": "9:11" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Beroun",
+    "odjezd": "9:18",
+    "prijezd": "10:11",
+    "doba": "53 minut",
+    "vlak": [
+      {
+        "kod": "OS 8824",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "9:18" },
+          { "nazev": "Praha - Smíchov", "cas": "9:25" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "9:34" },
+          { "nazev": "Praha - Radotín", "cas": "9:39" },
+          { "nazev": "Praha - černošice", "cas": "9:44" },
+          { "nazev": "Všenory", "cas": "9:49" },
+          { "nazev": "Řevnice", "cas": "9:55" },
+          { "nazev": "Karlštejn", "cas": "10:02" },
+          { "nazev": "Srbsko", "cas": "10:06" },
+          { "nazev": "Beroun", "cas": "10:11" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Beroun",
+    "odjezd": "10:13",
+    "prijezd": "10:53",
+    "doba": "40 minut",
+    "vlak": [
+      {
+        "kod": "R778 Berounka",
+        "sluzby": ["kolo", "vozicek", "wifi", "mistenka"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "10:21" },
+          { "nazev": "Praha - Smíchov", "cas": "10:21" },
+          { "nazev": "Beroun", "cas": "10:53" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Beroun",
+    "odjezd": "13:18",
+    "prijezd": "14:11",
+    "doba": "53 minut",
+    "vlak": [
+      {
+        "kod": "OS 8828",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "13:18" },
+          { "nazev": "Praha - Smíchov", "cas": "13:25" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "13:34" },
+          { "nazev": "Praha - Radotín", "cas": "13:39" },
+          { "nazev": "Praha - černošice", "cas": "13:44" },
+          { "nazev": "Všenory", "cas": "13:49" },
+          { "nazev": "Řevnice", "cas": "13:55" },
+          { "nazev": "Karlštejn", "cas": "14:02" },
+          { "nazev": "Srbsko", "cas": "14:06" },
+          { "nazev": "Beroun", "cas": "14:11" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Beroun",
+    "odjezd": "15:18",
+    "prijezd": "16:11",
+    "doba": "53 minut",
+    "vlak": [
+      {
+        "kod": "OS 8832",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "15:18" },
+          { "nazev": "Praha - Smíchov", "cas": "15:25" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "15:34" },
+          { "nazev": "Praha - Radotín", "cas": "15:39" },
+          { "nazev": "Praha - černošice", "cas": "15:44" },
+          { "nazev": "Všenory", "cas": "15:49" },
+          { "nazev": "Řevnice", "cas": "15:55" },
+          { "nazev": "Karlštejn", "cas": "16:02" },
+          { "nazev": "Srbsko", "cas": "16:06" },
+          { "nazev": "Beroun", "cas": "16:11" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Beroun",
+    "odjezd": "18:18",
+    "prijezd": "19:11",
+    "doba": "53 minut",
+    "vlak": [
+      {
+        "kod": "OS 8836",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "18:18" },
+          { "nazev": "Praha - Smíchov", "cas": "18:25" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "18:34" },
+          { "nazev": "Praha - Radotín", "cas": "18:39" },
+          { "nazev": "Praha - černošice", "cas": "18:44" },
+          { "nazev": "Všenory", "cas": "18:49" },
+          { "nazev": "Řevnice", "cas": "18:55" },
+          { "nazev": "Karlštejn", "cas": "19:02" },
+          { "nazev": "Srbsko", "cas": "19:06" },
+          { "nazev": "Beroun", "cas": "19:11" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Praha, hl.n.",
+    "cil": "Beroun",
+    "odjezd": "20:13",
+    "prijezd": "20:53",
+    "doba": "40 minut",
+    "vlak": [
+      {
+        "kod": "R778 Berounka",
+        "sluzby": ["kolo", "vozicek", "wifi", "mistenka"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "20:21" },
+          { "nazev": "Praha - Smíchov", "cas": "20:21" },
+          { "nazev": "Beroun", "cas": "20:53" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Beroun",
+    "cil": "Praha, hl.n.",
+    "odjezd": "8:07",
+    "prijezd": "8:47",
+    "doba": "40 minut",
+    "vlak": [
+      {
+        "kod": "R778 Berounka",
+        "sluzby": ["kolo", "vozicek", "wifi", "mistenka"],
+        "stanice": [
+          { "nazev": "Beroun", "cas": "8:07" },
+          { "nazev": "Praha - Smíchov", "cas": "8:38" },
+          { "nazev": "Praha - hl.n.", "cas": "8:47" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Beroun",
+    "cil": "Praha, hl.n.",
+    "odjezd": "9:19",
+    "prijezd": "10:12",
+    "doba": "53 minut",
+    "vlak": [
+      {
+        "kod": "OS 8823",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Beroun", "cas": "9:19" },
+          { "nazev": "Srbsko", "cas": "9:24" },
+          { "nazev": "Karlštejn", "cas": "9:27" },
+          { "nazev": "Řevnice", "cas": "9:35" },
+          { "nazev": "Všenory", "cas": "9:41" },
+          { "nazev": "Praha - černošice", "cas": "9:46" },
+          { "nazev": "Praha - Radotín", "cas": "9:51" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "9:55" },
+          { "nazev": "Praha - Smíchov", "cas": "10:05" },
+          { "nazev": "Praha - hl.n.", "cas": "10:12" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Beroun",
+    "cil": "Praha, hl.n.",
+    "odjezd": "11:19",
+    "prijezd": "12:12",
+    "doba": "53 minut",
+    "vlak": [
+      {
+        "kod": "OS 8827",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Beroun", "cas": "11:19" },
+          { "nazev": "Srbsko", "cas": "11:24" },
+          { "nazev": "Karlštejn", "cas": "11:27" },
+          { "nazev": "Řevnice", "cas": "11:35" },
+          { "nazev": "Všenory", "cas": "11:41" },
+          { "nazev": "Praha - černošice", "cas": "11:46" },
+          { "nazev": "Praha - Radotín", "cas": "11:51" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "11:55" },
+          { "nazev": "Praha - Smíchov", "cas": "12:05" },
+          { "nazev": "Praha - hl.n.", "cas": "12:12" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "start": "Beroun",
+    "cil": "Praha, hl.n.",
+    "odjezd": "13:07",
+    "prijezd": "13:47",
+    "doba": "40 minut",
+    "vlak": [
+      {
+        "kod": "R781 Berounka",
+        "sluzby": ["kolo", "vozicek", "wifi", "mistenka"],
+        "stanice": [
+          { "nazev": "Beroun", "cas": "13:07" },
+          { "nazev": "Praha - Smíchov", "cas": "13:38" },
+          { "nazev": "Praha - hl.n.", "cas": "13:47" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Beroun",
+    "cil": "Praha, hl.n.",
+    "odjezd": "15:19",
+    "prijezd": "16:12",
+    "doba": "53 minut",
+    "vlak": [
+      {
+        "kod": "OS 8831",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Beroun", "cas": "15:19" },
+          { "nazev": "Srbsko", "cas": "15:24" },
+          { "nazev": "Karlštejn", "cas": "15:27" },
+          { "nazev": "Řevnice", "cas": "15:35" },
+          { "nazev": "Všenory", "cas": "15:41" },
+          { "nazev": "Praha - černošice", "cas": "15:46" },
+          { "nazev": "Praha - Radotín", "cas": "15:51" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "15:55" },
+          { "nazev": "Praha - Smíchov", "cas": "16:05" },
+          { "nazev": "Praha - hl.n.", "cas": "16:12" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Beroun",
+    "cil": "Praha, hl.n.",
+    "odjezd": "17:19",
+    "prijezd": "18:12",
+    "doba": "53 minut",
+    "vlak": [
+      {
+        "kod": "OS 8835",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Beroun", "cas": "17:19" },
+          { "nazev": "Srbsko", "cas": "17:24" },
+          { "nazev": "Karlštejn", "cas": "17:27" },
+          { "nazev": "Řevnice", "cas": "17:35" },
+          { "nazev": "Všenory", "cas": "17:41" },
+          { "nazev": "Praha - černošice", "cas": "17:46" },
+          { "nazev": "Praha - Radotín", "cas": "17:51" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "17:55" },
+          { "nazev": "Praha - Smíchov", "cas": "18:05" },
+          { "nazev": "Praha - hl.n.", "cas": "18:12" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Beroun",
+    "cil": "Praha, hl.n.",
+    "odjezd": "20:07",
+    "prijezd": "20:47",
+    "doba": "40 minut",
+    "vlak": [
+      {
+        "kod": "R791 Berounka",
+        "sluzby": ["kolo", "vozicek", "wifi", "mistenka"],
+        "stanice": [
+          { "nazev": "Beroun", "cas": "20:07" },
+          { "nazev": "Praha - Smíchov", "cas": "20:38" },
+          { "nazev": "Praha - hl.n.", "cas": "20:47" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Říčany",
+    "cil": "Beroun",
+    "odjezd": "8:25",
+    "prijezd": "10:11",
+    "doba": "1 hodina 46 minut",
+    "vlak": [
+      {
+        "kod": "OS 2518",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "8:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "8:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "8:32" },
+          { "nazev": "Praha - Vršovice", "cas": "8:48" },
+          { "nazev": "Praha - hl.n.", "cas": "8:52" }
+        ]
+      },
+
+      {
+        "kod": "OS 8824",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "9:13" },
+          { "nazev": "Praha - Smíchov", "cas": "9:25" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "9:34" },
+          { "nazev": "Praha - Radotín", "cas": "9:39" },
+          { "nazev": "Praha - černošice", "cas": "9:44" },
+          { "nazev": "Všenory", "cas": "9:49" },
+          { "nazev": "Řevnice", "cas": "9:55" },
+          { "nazev": "Karlštejn", "cas": "10:02" },
+          { "nazev": "Srbsko", "cas": "10:06" },
+          { "nazev": "Beroun", "cas": "10:11" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "start": "Říčany",
+    "cil": "Beroun",
+    "odjezd": "9:25",
+    "prijezd": "10:53",
+    "doba": "1 hodina 28 minut",
+    "vlak": [
+      {
+        "kod": "OS 2522",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "9:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "9:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "9:32" },
+          { "nazev": "Praha - Vršovice", "cas": "9:48" },
+          { "nazev": "Praha - hl.n.", "cas": "9:52" }
+        ]
+      },
+
+      {
+        "kod": "R770 Berounka",
+        "sluzby": ["kolo", "vozicek", "wifi", "mistenka"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "10:13" },
+          { "nazev": "Praha - Smíchov", "cas": "10:21" },
+          { "nazev": "Beroun", "cas": "10:53" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "start": "Říčany",
+    "cil": "Beroun",
+    "odjezd": "10:25",
+    "prijezd": "12:11",
+    "doba": "1 hodina 46 minut",
+    "vlak": [
+      {
+        "kod": "OS 2532",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "10:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "10:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "10:32" },
+          { "nazev": "Praha - Vršovice", "cas": "10:48" },
+          { "nazev": "Praha - hl.n.", "cas": "10:52" }
+        ]
+      },
+
+      {
+        "kod": "OS 8838",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "11:13" },
+          { "nazev": "Praha - Smíchov", "cas": "11:25" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "11:34" },
+          { "nazev": "Praha - Radotín", "cas": "11:39" },
+          { "nazev": "Praha - černošice", "cas": "11:44" },
+          { "nazev": "Všenory", "cas": "11:49" },
+          { "nazev": "Řevnice", "cas": "11:55" },
+          { "nazev": "Karlštejn", "cas": "12:02" },
+          { "nazev": "Srbsko", "cas": "12:06" },
+          { "nazev": "Beroun", "cas": "12:11" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "start": "Říčany",
+    "cil": "Beroun",
+    "odjezd": "12:25",
+    "prijezd": "13:53",
+    "doba": "1 hodina 28 minut",
+    "vlak": [
+      {
+        "kod": "OS 2526",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "12:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "12:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "12:32" },
+          { "nazev": "Praha - Vršovice", "cas": "12:48" },
+          { "nazev": "Praha - hl.n.", "cas": "12:52" }
+        ]
+      },
+
+      {
+        "kod": "R773 Berounka",
+        "sluzby": ["kolo", "vozicek", "wifi", "mistenka"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "13:13" },
+          { "nazev": "Praha - Smíchov", "cas": "13:21" },
+          { "nazev": "Beroun", "cas": "13:53" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Říčany",
+    "cil": "Beroun",
+    "odjezd": "14:25",
+    "prijezd": "16:11",
+    "doba": "1 hodina 46 minut",
+    "vlak": [
+      {
+        "kod": "OS 2532",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "14:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "14:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "14:32" },
+          { "nazev": "Praha - Vršovice", "cas": "14:48" },
+          { "nazev": "Praha - hl.n.", "cas": "14:52" }
+        ]
+      },
+
+      {
+        "kod": "OS 8838",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "15:13" },
+          { "nazev": "Praha - Smíchov", "cas": "15:25" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "15:34" },
+          { "nazev": "Praha - Radotín", "cas": "15:39" },
+          { "nazev": "Praha - černošice", "cas": "15:44" },
+          { "nazev": "Všenory", "cas": "15:49" },
+          { "nazev": "Řevnice", "cas": "15:55" },
+          { "nazev": "Karlštejn", "cas": "16:02" },
+          { "nazev": "Srbsko", "cas": "16:06" },
+          { "nazev": "Beroun", "cas": "16:11" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Říčany",
+    "cil": "Beroun",
+    "odjezd": "16:25",
+    "prijezd": "17:53",
+    "doba": "1 hodina 28 minut",
+    "vlak": [
+      {
+        "kod": "OS 2526",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "16:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "16:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "16:32" },
+          { "nazev": "Praha - Vršovice", "cas": "16:48" },
+          { "nazev": "Praha - hl.n.", "cas": "16:52" }
+        ]
+      },
+
+      {
+        "kod": "R773 Berounka",
+        "sluzby": ["kolo", "vozicek", "wifi", "mistenka"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "17:17" },
+          { "nazev": "Praha - Smíchov", "cas": "17:21" },
+          { "nazev": "Beroun", "cas": "17:53" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "start": "Říčany",
+    "cil": "Beroun",
+    "odjezd": "20:25",
+    "prijezd": "21:11",
+    "doba": "1 hodina 46 minut",
+    "vlak": [
+      {
+        "kod": "OS 2532",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Říčany", "cas": "20:25" },
+          { "nazev": "Praha - Kolovraty", "cas": "20:28" },
+          { "nazev": "Praha - Uhřiněves", "cas": "20:32" },
+          { "nazev": "Praha - Vršovice", "cas": "20:48" },
+          { "nazev": "Praha - hl.n.", "cas": "20:52" }
+        ]
+      },
+
+      {
+        "kod": "OS 8838",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "20:13" },
+          { "nazev": "Praha - Smíchov", "cas": "20:25" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "20:34" },
+          { "nazev": "Praha - Radotín", "cas": "20:39" },
+          { "nazev": "Praha - černošice", "cas": "20:44" },
+          { "nazev": "Všenory", "cas": "20:49" },
+          { "nazev": "Řevnice", "cas": "20:55" },
+          { "nazev": "Karlštejn", "cas": "21:02" },
+          { "nazev": "Srbsko", "cas": "21:06" },
+          { "nazev": "Beroun", "cas": "21:11" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Beroun",
+    "cil": "Říčany",
+    "odjezd": "9:19",
+    "prijezd": "11:02",
+    "doba": "1 hodina 43 minut",
+    "vlak": [
+      {
+        "kod": "OS 8823",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Beroun", "cas": "9:19" },
+          { "nazev": "Srbsko", "cas": "9:24" },
+          { "nazev": "Karlštejn", "cas": "9:27" },
+          { "nazev": "Řevnice", "cas": "9:35" },
+          { "nazev": "Všenory", "cas": "9:41" },
+          { "nazev": "Praha - černošice", "cas": "9:46" },
+          { "nazev": "Praha - Radotín", "cas": "9:51" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "9:55" },
+          { "nazev": "Praha - Smíchov", "cas": "10:05" },
+          { "nazev": "Praha - hl.n.", "cas": "10:12" }
+        ]
+      },
+      {
+        "kod": "OS 2529",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "10:35" },
+          { "nazev": "Praha - Vršovice", "cas": "10:40" },
+          { "nazev": "Praha - Strašnice", "cas": "10:44" },
+          { "nazev": "Praha - Hostivař", "cas": "10:50" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "10:52" },
+          { "nazev": "Praha - Uhřiněves", "cas": "10:56" },
+          { "nazev": "Praha - Kolovraty", "cas": "10:59" },
+          { "nazev": "Říčany", "cas": "11:02" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "start": "Beroun",
+    "cil": "Říčany",
+    "odjezd": "13:19",
+    "prijezd": "15:02",
+    "doba": "1 hodina 43 minut",
+    "vlak": [
+      {
+        "kod": "OS 8831",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Beroun", "cas": "13:19" },
+          { "nazev": "Srbsko", "cas": "13:24" },
+          { "nazev": "Karlštejn", "cas": "13:27" },
+          { "nazev": "Řevnice", "cas": "13:35" },
+          { "nazev": "Všenory", "cas": "13:41" },
+          { "nazev": "Praha - černošice", "cas": "13:46" },
+          { "nazev": "Praha - Radotín", "cas": "13:51" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "13:55" },
+          { "nazev": "Praha - Smíchov", "cas": "14:05" },
+          { "nazev": "Praha - hl.n.", "cas": "14:12" }
+        ]
+      },
+      {
+        "kod": "OS 2529",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "14:35" },
+          { "nazev": "Praha - Vršovice", "cas": "14:40" },
+          { "nazev": "Praha - Strašnice", "cas": "14:44" },
+          { "nazev": "Praha - Hostivař", "cas": "14:50" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "14:52" },
+          { "nazev": "Praha - Uhřiněves", "cas": "14:56" },
+          { "nazev": "Praha - Kolovraty", "cas": "14:59" },
+          { "nazev": "Říčany", "cas": "15:02" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Beroun",
+    "cil": "Říčany",
+    "odjezd": "17:19",
+    "prijezd": "19:02",
+    "doba": "1 hodina 43 minut",
+    "vlak": [
+      {
+        "kod": "OS 8823",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Beroun", "cas": "17:19" },
+          { "nazev": "Srbsko", "cas": "17:24" },
+          { "nazev": "Karlštejn", "cas": "17:27" },
+          { "nazev": "Řevnice", "cas": "17:35" },
+          { "nazev": "Všenory", "cas": "17:41" },
+          { "nazev": "Praha - černošice", "cas": "17:46" },
+          { "nazev": "Praha - Radotín", "cas": "17:51" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "17:55" },
+          { "nazev": "Praha - Smíchov", "cas": "18:05" },
+          { "nazev": "Praha - hl.n.", "cas": "18:12" }
+        ]
+      },
+      {
+        "kod": "OS 2529",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "18:35" },
+          { "nazev": "Praha - Vršovice", "cas": "18:40" },
+          { "nazev": "Praha - Strašnice", "cas": "18:44" },
+          { "nazev": "Praha - Hostivař", "cas": "18:50" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "18:52" },
+          { "nazev": "Praha - Uhřiněves", "cas": "18:56" },
+          { "nazev": "Praha - Kolovraty", "cas": "18:59" },
+          { "nazev": "Říčany", "cas": "19:02" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Beroun",
+    "cil": "Říčany",
+    "odjezd": "19:19",
+    "prijezd": "21:02",
+    "doba": "1 hodina 43 minut",
+    "vlak": [
+      {
+        "kod": "OS 8831",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Beroun", "cas": "19:19" },
+          { "nazev": "Srbsko", "cas": "19:24" },
+          { "nazev": "Karlštejn", "cas": "19:27" },
+          { "nazev": "Řevnice", "cas": "19:35" },
+          { "nazev": "Všenory", "cas": "19:41" },
+          { "nazev": "Praha - černošice", "cas": "19:46" },
+          { "nazev": "Praha - Radotín", "cas": "19:51" },
+          { "nazev": "Praha - Velká Chuchle", "cas": "19:55" },
+          { "nazev": "Praha - Smíchov", "cas": "20:05" },
+          { "nazev": "Praha - hl.n.", "cas": "20:12" }
+        ]
+      },
+      {
+        "kod": "OS 2529",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [
+          { "nazev": "Praha - hl.n.", "cas": "20:35" },
+          { "nazev": "Praha - Vršovice", "cas": "20:40" },
+          { "nazev": "Praha - Strašnice", "cas": "20:44" },
+          { "nazev": "Praha - Hostivař", "cas": "20:50" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "20:52" },
+          { "nazev": "Praha - Uhřiněves", "cas": "20:56" },
+          { "nazev": "Praha - Kolovraty", "cas": "20:59" },
+          { "nazev": "Říčany", "cas": "21:02" }
+        ]
+      }
+    ]
+  }
+]

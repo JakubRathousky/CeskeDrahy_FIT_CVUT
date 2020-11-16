@@ -1,5 +1,4 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from "@material-ui/core/FormControl";
@@ -14,18 +13,15 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import List from "@material-ui/core/List";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import DateFnsUtils from '@date-io/date-fns';
-import Container from "@material-ui/core/Container";
 import Skeleton from "@material-ui/lab/Skeleton";
 import ImportExportIcon from '@material-ui/icons/ImportExport';
 import SearchIcon from '@material-ui/icons/Search';
 import Box from '@material-ui/core/Box';
-import IconButton from '@material-ui/core/IconButton';
 import { KeyboardDatePicker, MuiPickersUtilsProvider, } from '@material-ui/pickers';
+import { getStations, getStationById } from '../data/stations';
 
 
 function MaterialUIPickers({changeDate, date}) {
@@ -69,7 +65,7 @@ export default class Form extends React.Component {
         }
     }
 
-    destinations = [{name:'Říčany', id:10},{name:'Praha', id: 20},{name: 'Hr. Králové', id:30}]
+    destinations = getStations();
 
     onFromChange = (event) => { this.setState({from: event.target.value}) }
     onToChange = (event) => { this.setState({to: event.target.value}) }
@@ -90,7 +86,7 @@ export default class Form extends React.Component {
         event.preventDefault();
         this.setState({direction: event.target.value})
     }
-    onSearch = (event) => {
+    onSearch = () => {
         if (!this.state.to || !this.state.from || !this.state.time || !this.state.date || !this.state.direction) {
             this.setState({hasError: true})
         } else {
@@ -237,7 +233,7 @@ export default class Form extends React.Component {
                             <List component="nav" aria-label="main mailbox folders">
                                 {this.state.searchHistory.map(x => (
                                     <ListItem button>
-                                        <ListItemText primary={this.destinations.find(y => y.id === x.from).name + " -> " + this.destinations.find(y => y.id === x.to).name} />
+                                        <ListItemText primary={getStationById(x.from).name + " -> " + getStationById(x.to).name} />
                                         <ListItemIcon>
                                             <SearchIcon />
                                         </ListItemIcon>

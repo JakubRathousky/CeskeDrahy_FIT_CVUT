@@ -57,12 +57,11 @@ export default class FrontPage extends React.Component {
                         searchHistory={this.state.searchHistory}
                         updateForm={this.updateForm} />
         else if (this.state.showScene === 2)
-            return <Result showForm={this.showForm} showCart={this.showCart} />
+            return <Result showForm={this.showForm} showCart={this.showCart} formState={this.state.formState}/>
         else if (this.state.showScene === 3)
             return <Cart showForm={this.showForm} showResult={this.showResult}/>
     }
   render () {
-      console.log(this.state);
       return (
         <React.Fragment>
             <CssBaseline />
