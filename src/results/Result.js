@@ -143,12 +143,12 @@ export default class Result extends React.Component {
               </Grid>
             </Grid>
             <Grid item xs={12}>
-              <ResultCard connection={this.state.before} isActual={false}/>
+              <ResultCard connection={this.state.before} isActual={false} showCart={this.props.showCart}/>
             </Grid>
             <Grid item xs={12}>
-              <ResultCard connection={this.state.actual} isActual={true}/>
+              <ResultCard connection={this.state.actual} isActual={true} showCart={this.props.showCart}/>
             </Grid>
-              {this.state.future.map(x => (<Grid item xs={12}><ResultCard connection={x} isActual={false}/></Grid>))}
+              {this.state.future.map(x => (<Grid item xs={12}><ResultCard connection={x} isActual={false} showCart={this.props.showCart}/></Grid>))}
           </Grid>
         </Grid>
         <Grid item xs={12} sm={6} md={2}></Grid>
