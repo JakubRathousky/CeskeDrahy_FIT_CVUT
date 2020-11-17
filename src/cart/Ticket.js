@@ -143,7 +143,7 @@ export default class Ticket extends React.Component {
               <Grid item xs={12} sm={6} md={1}></Grid>
               <Grid item xs={12} sm={6} md={3}>
                 {this.state.isMistenka ? (
-                  <Box border={1} my={1} align={"center"}>
+                  <Box border={1} mt={1} py={1} align={"center"}>
                     {" "}
                     Místo 105 | Vůz 369{" "}
                   </Box>
