@@ -126,7 +126,7 @@ export default class Result extends React.Component {
                 <Grid container>
                   <Grid item xs={12} sm={6} md={3} align="center">
                     <Box border={1} borderRadius={16} className="tlacitko">
-                      <Button type="submit" size={"large"} onClick={()=>this.props.showForm(false)}>
+                      <Button type="submit" size={"large"} fullWidth={true} onClick={()=>this.props.showForm(false)}>
                         Upravit vyhledávání
                       </Button>
                     </Box>
@@ -134,7 +134,7 @@ export default class Result extends React.Component {
                   <Grid item xs={12} sm={6} md={6}></Grid>
                   <Grid item xs={12} sm={6} md={3} align="center">
                     <Box border={1} borderRadius={16} className="tlacitko">
-                      <Button type="submit" size={"large"} onClick={()=>this.props.showForm(true)}>
+                      <Button type="submit" fullWidth={true} size={"large"} onClick={()=>this.props.showForm(true)}>
                         Nové vyhledání
                       </Button>
                     </Box>

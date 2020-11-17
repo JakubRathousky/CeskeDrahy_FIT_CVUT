@@ -28,7 +28,7 @@ export default class ResultCart extends React.Component {
           </Grid>
           <Grid item xs={12} sm={6} md={3} align="center">
             <Box border={1} borderRadius={16} className="kupit-tlacitko">
-              <Button type="submit" size={"large"} onClick={this.props.showCart}>
+              <Button type="submit" size={"large"} fullWidth={true} onClick={this.props.showCart}>
                 40,- Kč
               </Button>
             </Box>

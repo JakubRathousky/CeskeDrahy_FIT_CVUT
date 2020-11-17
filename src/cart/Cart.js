@@ -65,6 +65,7 @@ export default class Cart extends React.Component {
                     <Button
                       type="submit"
                       size={"large"}
+                      fullWidth={true}
                       onClick={() => {this.props.saveTickets(this.state.tickets); this.props.showResult()}}
                     >
                       Jet jindy
@@ -76,6 +77,7 @@ export default class Cart extends React.Component {
                   <Box border={1} borderRadius={16} className="tlacitko">
                     <Button
                       type="submit"
+                      fullWidth={true}
                       size={"large"}
                       onClick={() => this.props.showForm(true)}
                     >
@@ -105,6 +107,7 @@ export default class Cart extends React.Component {
                 <Grid item xs={12} sm={6} md={1} align="center">
                   <Box border={1} borderRadius={16} className="kupit-tlacitko">
                     <Button type="submit" size={"large"}
+                    fullWidth={true}
                       onClick={() => this.setState({tickets: [...this.state.tickets, this.createNewTicket()] })}
                     >
                       +

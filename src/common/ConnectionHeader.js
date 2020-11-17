@@ -159,6 +159,7 @@ export default class ConnectionHeader extends React.Component {
               <Button
                 type="submit"
                 size={"large"}
+                fullWidth={true}
                 onClick={() => {
                   this.setState({ isDetail: !this.state.isDetail });
                 }}
