@@ -39,9 +39,9 @@ export default class FrontPage extends React.Component {
       }
     updateForm = (formState) => {
         let history = this.state.searchHistory.find(x => x.to == formState.to && x.from == formState.from);
-        const searchHistory = this.state.searchHistory;
+        let searchHistory = this.state.searchHistory;
         if (!history)
-            searchHistory.push({from: formState.from, to: formState.to, direction: formState.direction});
+            searchHistory = [{from: formState.from, to: formState.to, direction: formState.direction}, ...searchHistory];
         this.setState({
             formState: formState,
             searchHistory: searchHistory
