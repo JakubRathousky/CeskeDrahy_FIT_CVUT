@@ -222,7 +222,9 @@ export default class Form extends React.Component {
                         onClick={() => {
                           this.setState({
                             from: this.state.to,
+                            fromInputValue: this.state.toInputValue,
                             to: this.state.from,
+                            toInputValue: this.state.fromInputValue,
                           });
                         }}
                       />
