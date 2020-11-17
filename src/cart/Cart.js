@@ -12,8 +12,11 @@ import Typography from "@material-ui/core/Typography";
 import InputLabel from "@material-ui/core/InputLabel";
 import MuiPhoneNumber from "material-ui-phone-number";
 import ConnectionHeader from "../common/ConnectionHeader";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import CartCard from "./CartCard";
-import '../App.css';
+import SearchIcon from "@material-ui/icons/Search";
+import EditIcon from '@material-ui/icons/Edit';
+import "../App.css";
 
 export default class Cart extends React.Component {
   constructor(props) {
@@ -21,12 +24,12 @@ export default class Cart extends React.Component {
     if (props.tickets.length >= 1)
       this.state = {
         tickets: [...props.tickets],
-        bought: false
-      }
+        bought: false,
+      };
     else
       this.state = {
         tickets: [this.createNewTicket()],
-        bought: false
+        bought: false,
       };
   }
 
@@ -38,17 +41,17 @@ export default class Cart extends React.Component {
       isMistenka: false,
       tarif: 10,
       numberOfPassangers: 1,
-    }
-  }
+    };
+  };
   removeTicket = (index) => {
-    this.setState({tickets: this.state.tickets.splice(index, 1)});
-  }
+    this.setState({ tickets: this.state.tickets.splice(index, 1) });
+  };
 
   updateTicket = (ticket, index) => {
     let tickets = this.state.tickets;
     tickets[index] = ticket;
-    this.setState({tickets: tickets});
-  }
+    this.setState({ tickets: tickets });
+  };
 
   render() {
     return (
@@ -60,17 +63,21 @@ export default class Cart extends React.Component {
             <Grid item xs={12}>
               <Grid container>
                 <Grid item xs={12} sm={6} md={3} align="center">
-                {!this.state.bought ? (
-                  <Box border={1} borderRadius={16} className="tlacitko">
-                    <Button
-                      type="submit"
-                      size={"large"}
-                      fullWidth={true}
-                      onClick={() => {this.props.saveTickets(this.state.tickets); this.props.showResult()}}
-                    >
-                      Jet jindy
-                    </Button>
-                  </Box>) : null}
+                  {!this.state.bought ? (
+                    <Box border={1} borderRadius={16} className="tlacitko">
+                      <Button
+                        type="submit"
+                        size={"large"}
+                        fullWidth={true}
+                        onClick={() => {
+                          this.props.saveTickets(this.state.tickets);
+                          this.props.showResult();
+                        }}
+                      >
+                        <EditIcon/> <Box mx={1}> <Typography> Jet jindy </Typography></Box>
+                      </Button>
+                    </Box>
+                  ) : null}
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}></Grid>
                 <Grid item xs={12} sm={6} md={3} align="center">
@@ -81,49 +88,86 @@ export default class Cart extends React.Component {
                       size={"large"}
                       onClick={() => this.props.showForm(true)}
                     >
-                      Nové vyhledání
+                      <SearchIcon />
+                      <Box mx={1}>
+                        <Typography>Nové vyhledání</Typography>
+                      </Box>
                     </Button>
                   </Box>
                 </Grid>
               </Grid>
             </Grid>
-            { !this.state.bought ? <CartCard
-              connection={this.props.connection}
-              tickets={this.state.tickets}
-              removeTicket={this.removeTicket}
-              updateTicket={this.updateTicket}
-              buyTickets={this.props.buyTickets} /> : (
-                <Grid item xs={12}>
+            {!this.state.bought ? (
+              <CartCard
+                connection={this.props.connection}
+                tickets={this.state.tickets}
+                removeTicket={this.removeTicket}
+                updateTicket={this.updateTicket}
+                buyTickets={this.props.buyTickets}
+              />
+            ) : (
+              <Grid item xs={12}>
                 <Grid container align="center">
-                <Typography variant="h5" noWrap>
+                  <Typography variant="h5" noWrap>
                     Děkujeme za nákup!
-                </Typography>
+                  </Typography>
                 </Grid>
               </Grid>
-              )}
-              {!this.state.bought ? (
-            <Grid item xs={12}>
-              <Grid container>
-                <Grid item xs={12} sm={6} md={1} align="center">
-                  <Box border={1} borderRadius={16} className="kupit-tlacitko">
-                    <Button type="submit" size={"large"}
-                    fullWidth={true}
-                      onClick={() => this.setState({tickets: [...this.state.tickets, this.createNewTicket()] })}
+            )}
+            {!this.state.bought ? (
+              <Grid item xs={12}>
+                <Grid container>
+                  <Grid item xs={12} sm={6} md={1} align="center">
+                    <Box
+                      border={1}
+                      borderRadius={16}
+                      className="kupit-tlacitko"
                     >
-                      +
-                    </Button>
-                  </Box>
-                </Grid>
-                <Grid item xs={12} sm={6} md={8}></Grid>
-                <Grid item xs={12} sm={6} md={3} align="center">
-                  <Box border={1} borderRadius={16} className="kupit-tlacitko">
-                    <Button type="submit" size={"large"} onClick={() => {this.props.buyTickets(this.state.tickets, this.props.connection);this.setState({bought:true})}}>
-                      Přidat do košíku
-                    </Button>
-                  </Box>
+                      <Button
+                        type="submit"
+                        size={"large"}
+                        fullWidth={true}
+                        onClick={() =>
+                          this.setState({
+                            tickets: [
+                              ...this.state.tickets,
+                              this.createNewTicket(),
+                            ],
+                          })
+                        }
+                      >
+                        +
+                      </Button>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={8}></Grid>
+                  <Grid item xs={12} sm={6} md={3} align="center">
+                    <Box
+                      border={1}
+                      borderRadius={16}
+                      className="kupit-tlacitko"
+                    >
+                      <Button
+                        type="submit"
+                        size={"large"}
+                        onClick={() => {
+                          this.props.buyTickets(
+                            this.state.tickets,
+                            this.props.connection
+                          );
+                          this.setState({ bought: true });
+                        }}
+                      >
+                        <AddShoppingCartIcon />
+                        <Box mx={1}>
+                          <Typography>Přidat do košíku</Typography>
+                        </Box>
+                      </Button>
+                    </Box>
+                  </Grid>
                 </Grid>
               </Grid>
-            </Grid>) : null}
+            ) : null}
           </Grid>
         </Grid>
         <Grid item xs={12} sm={6} md={2}></Grid>

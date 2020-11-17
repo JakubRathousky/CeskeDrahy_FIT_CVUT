@@ -8,6 +8,8 @@ import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import Box from "@material-ui/core/Box";
 import { getConnections } from '../data/connections';
 import ResultCard from './ResultCard';
+import EditIcon from '@material-ui/icons/Edit';
+import SearchIcon from "@material-ui/icons/Search";
 
 export default class Result extends React.Component {
   constructor(props) {
@@ -124,18 +126,21 @@ export default class Result extends React.Component {
             <Grid item xs={12}>
               <Grid item xs={12}>
                 <Grid container>
-                  <Grid item xs={12} sm={6} md={3} align="center">
+                  <Grid item xs={12} sm={6} md={4} align="center">
                     <Box border={1} borderRadius={16} className="tlacitko">
                       <Button type="submit" size={"large"} fullWidth={true} onClick={()=>this.props.showForm(false)}>
-                        Upravit vyhledávání
+                        <EditIcon/> <Box mx={1}> <Typography> Upravit vyhledávání </Typography></Box>
                       </Button>
                     </Box>
                   </Grid>
-                  <Grid item xs={12} sm={6} md={6}></Grid>
+                  <Grid item xs={12} sm={6} md={5}></Grid>
                   <Grid item xs={12} sm={6} md={3} align="center">
                     <Box border={1} borderRadius={16} className="tlacitko">
                       <Button type="submit" fullWidth={true} size={"large"} onClick={()=>this.props.showForm(true)}>
-                        Nové vyhledání
+                      <SearchIcon />
+                      <Box mx={1}>
+                        <Typography>Nové vyhledání</Typography>
+                      </Box>
                       </Button>
                     </Box>
                   </Grid>

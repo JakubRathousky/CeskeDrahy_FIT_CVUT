@@ -15,18 +15,23 @@ import ListItemText from "@material-ui/core/ListItemText";
 import List from "@material-ui/core/List";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import Autocomplete from "@material-ui/lab/Autocomplete";
 import DateFnsUtils from "@date-io/date-fns";
 import Skeleton from "@material-ui/lab/Skeleton";
 import ImportExportIcon from "@material-ui/icons/ImportExport";
 import SearchIcon from "@material-ui/icons/Search";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Box from "@material-ui/core/Box";
 import {
   KeyboardDatePicker,
   MuiPickersUtilsProvider,
 } from "@material-ui/pickers";
-import { getStations, getStationById, getStationByName } from "../data/stations";
-import '../App.css';
+import {
+  getStations,
+  getStationById,
+  getStationByName,
+} from "../data/stations";
+import "../App.css";
 
 function MaterialUIPickers({ changeDate, date }) {
   // The first commit of Material-UI
@@ -67,7 +72,7 @@ export default class Form extends React.Component {
       time: props.formState.time,
       hasError: false,
       toInputValue: "",
-      fromInputValue: ""
+      fromInputValue: "",
     };
   }
 
@@ -76,25 +81,23 @@ export default class Form extends React.Component {
     if (number === 20) return "senior";
     if (number === 30) return "junior";
     return "";
-  }
+  };
 
   destinations = getStations();
 
   reBuy = (historyBuy) => {
     this.props.reBuy(historyBuy);
-  }
+  };
 
   onFromChange = (newValue) => {
-    if (!newValue)
-        this.setState({ from: "" });
+    if (!newValue) this.setState({ from: "" });
     else if (this.state.to !== newValue.id)
-        this.setState({ from: newValue.id });
+      this.setState({ from: newValue.id });
   };
   onToChange = (newValue) => {
-    if (!newValue)
-        this.setState({ to: "" });
+    if (!newValue) this.setState({ to: "" });
     else if (this.state.from !== newValue.id)
-        this.setState({ to: newValue.id });
+      this.setState({ to: newValue.id });
   };
   onTimeChange = (event) => {
     this.setState({ time: event.target.value });
@@ -186,32 +189,48 @@ export default class Form extends React.Component {
                         inputValue={this.state.fromInputValue}
                         getOptionLabel={(option) => option.name}
                         onInputChange={(event, newInputValue) => {
-                            this.setState({fromInputValue: newInputValue});
-                          }}
-                        onChange={(event, newValue) => this.onFromChange(newValue)}
-                        renderInput={(params) => <TextField {...params} label="Stanice odkud" variant="outlined" />}
-                        />
+                          this.setState({ fromInputValue: newInputValue });
+                        }}
+                        onChange={(event, newValue) =>
+                          this.onFromChange(newValue)
+                        }
+                        renderInput={(params) => (
+                          <TextField
+                            {...params}
+                            label="Stanice odkud"
+                            variant="outlined"
+                          />
+                        )}
+                      />
                     </Grid>
                     <Grid item xs={12}>
-                        <Box my={1}>
-                      {this.state.hasError && !this.state.to && (
-                        <FormHelperText error>
-                          Toto je povinná položka!
-                        </FormHelperText>
-                      )}
-                                          <Autocomplete
-                        id="combo-box-demo"
-                        options={this.destinations}
-                        value={getStationById(this.state.to)}
-                        inputValue={this.state.toInputValue}
-                        onInputChange={(event, newInputValue) => {
-                            this.setState({toInputValue: newInputValue});
+                      <Box my={1}>
+                        {this.state.hasError && !this.state.to && (
+                          <FormHelperText error>
+                            Toto je povinná položka!
+                          </FormHelperText>
+                        )}
+                        <Autocomplete
+                          id="combo-box-demo"
+                          options={this.destinations}
+                          value={getStationById(this.state.to)}
+                          inputValue={this.state.toInputValue}
+                          onInputChange={(event, newInputValue) => {
+                            this.setState({ toInputValue: newInputValue });
                           }}
-                        getOptionLabel={(option) => option.name}
-                        onChange={(event, newValue) => this.onToChange(newValue)}
-                        renderInput={(params) => <TextField {...params} label="Stanice kam" variant="outlined" />}
+                          getOptionLabel={(option) => option.name}
+                          onChange={(event, newValue) =>
+                            this.onToChange(newValue)
+                          }
+                          renderInput={(params) => (
+                            <TextField
+                              {...params}
+                              label="Stanice kam"
+                              variant="outlined"
+                            />
+                          )}
                         />
-                        </Box>
+                      </Box>
                     </Grid>
                   </Grid>
                   <Grid item xs={1} align="center">
@@ -337,9 +356,15 @@ export default class Form extends React.Component {
                   <Grid item sm={4}></Grid>
                   <Grid item sm={4}></Grid>
                   <Grid item sm={4} align="right">
-                    <Button className="search-tlacitko" type="submit" onClick={this.onSearch}>
-                      {" "}
-                      Vyhledat{" "}
+                    <Button
+                      className="search-tlacitko"
+                      type="submit"
+                      onClick={this.onSearch}
+                    >
+                      <SearchIcon />
+                      <Box mx={1}>
+                        <Typography>Vyhledat</Typography>
+                      </Box>
                     </Button>
                   </Grid>
                 </Grid>
@@ -384,50 +409,67 @@ export default class Form extends React.Component {
         <Grid item xs={12} sm={6} md={1}></Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Grid container>
-              {this.state.buyHistory.length > 0 ? (
-            <Box border={1} my={3} className="result">
-              <List component="nav" aria-label="main mailbox folders">
-                {this.state.buyHistory.map((x) => (
-                  <Grid container>
-                    <Grid item xs={12} sm={6} md={5}>
-                      <Typography align="center">
-                        {x.connection.start}
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={2}>
-                      <Typography align="center">-></Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={5}>
-                      <Typography align="center">{x.connection.cil}</Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={5}>
-                      <Typography align="center">
-                        {x.connection.odjezd}
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={2}>
-                      <Typography align="center">-</Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={5}>
-                      <Typography align="center">
-                        {x.connection.prijezd}
-                      </Typography>
-                    </Grid>
-                    {x.tickets.map(y => (
+            {this.state.buyHistory.length > 0 ? (
+              <Box border={1} my={3} className="result">
+                <List component="nav" aria-label="main mailbox folders">
+                  {this.state.buyHistory.map((x) => (
+                    <Grid container>
+                      <Grid item xs={12} sm={6} md={5}>
+                        <Typography align="center">
+                          {x.connection.start}
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={12} sm={6} md={2}>
+                        <Typography align="center">-></Typography>
+                      </Grid>
+                      <Grid item xs={12} sm={6} md={5}>
+                        <Typography align="center">
+                          {x.connection.cil}
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={12} sm={6} md={5}>
+                        <Typography align="center">
+                          {x.connection.odjezd}
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={12} sm={6} md={2}>
+                        <Typography align="center">-</Typography>
+                      </Grid>
+                      <Grid item xs={12} sm={6} md={5}>
+                        <Typography align="center">
+                          {x.connection.prijezd}
+                        </Typography>
+                      </Grid>
+                      {x.tickets.map((y) => (
                         <Grid item xs={12} sm={12} md={12}>
-                            <Typography align="left"> - {y.numberOfPassangers}x - {this.convertTarif(y.tarif)}</Typography>
+                          <Box mx={1}>
+                            <Typography align="left">
+                              {" "}
+                              - {y.numberOfPassangers}x -{" "}
+                              {this.convertTarif(y.tarif)}
+                            </Typography>
+                          </Box>
                         </Grid>
-                    ))}
-                    <Grid item xs={12} sm={6} md={4}></Grid>
-                    <Grid item xs={12} sm={6} md={8}>
-                      <Button onClick={() => this.reBuy(x)}>
-                        <Box m={1} className="search-tlacitko">zakoupit</Box>
-                      </Button>
+                      ))}
+                      <Grid item xs={12} sm={6} md={2}></Grid>
+                      <Grid item xs={12} sm={6} md={8}>
+                        <Box m={1} className="search-tlacitko">
+                          <Button
+                            fullWidth={true}
+                            onClick={() => this.reBuy(x)}
+                          >
+                            <AddShoppingCartIcon />
+                        <Box mx={1}>
+                          <Typography>Zakoupit</Typography>
+                        </Box>
+                          </Button>
+                        </Box>
+                      </Grid>
                     </Grid>
-                  </Grid>
-                ))}
-              </List>
-            </Box>) : null}
+                  ))}
+                </List>
+              </Box>
+            ) : null}
           </Grid>
         </Grid>
       </Grid>

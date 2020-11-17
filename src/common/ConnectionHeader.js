@@ -6,7 +6,7 @@ import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import TrainIcon from "@material-ui/icons/Train";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import Box from "@material-ui/core/Box";
-
+import VisibilityIcon from "@material-ui/icons/Visibility";
 export default class ConnectionHeader extends React.Component {
   constructor(props) {
     super(props);
@@ -150,7 +150,9 @@ export default class ConnectionHeader extends React.Component {
           <Grid item xs={12} sm={6} md={4}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <Typography component="p" className="zpozdeni-red">Aktuální zpoždění: 245 m</Typography>
+                <Typography component="p" className="zpozdeni-red">
+                  Aktuální zpoždění: 245 m
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -164,7 +166,10 @@ export default class ConnectionHeader extends React.Component {
                   this.setState({ isDetail: !this.state.isDetail });
                 }}
               >
-                Detail
+                <VisibilityIcon />
+                <Box mx={1}>
+                  <Typography>Detail</Typography>
+                </Box>
               </Button>
             </Box>
           </Grid>
