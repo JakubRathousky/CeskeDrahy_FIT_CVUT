@@ -88,7 +88,7 @@ export default class FrontPage extends React.Component {
                 showForm={this.showForm}
                 showResult={this.showResult}
                 saveTickets={(tickets) => this.setState({tickets: tickets})}
-                buyTickets={(tickets, connections) => {this.setState({buyHistory: [...this.state.buyHistory, {connection: connections, tickets: tickets}]})}}
+                buyTickets={(tickets, connections) => {this.setState({buyHistory: [{connection: connections, tickets: tickets}, ...this.state.buyHistory]})}}
                 tickets={this.state.tickets}
                 connection={this.state.selectedConnection}
             />
