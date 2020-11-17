@@ -193,6 +193,7 @@ export default class Form extends React.Component {
                         />
                     </Grid>
                     <Grid item xs={12}>
+                        <Box my={1}>
                       {this.state.hasError && !this.state.to && (
                         <FormHelperText error>
                           Toto je povinná položka!
@@ -210,6 +211,7 @@ export default class Form extends React.Component {
                         onChange={(event, newValue) => this.onToChange(newValue)}
                         renderInput={(params) => <TextField {...params} label="Stanice kam" variant="outlined" />}
                         />
+                        </Box>
                     </Grid>
                   </Grid>
                   <Grid item xs={1} align="center">
