@@ -23,7 +23,8 @@ export default class FrontPage extends React.Component {
             formState: this.formInit,
             searchHistory: [],
             buyHistory: [],
-            showScene: 1
+            showScene: 1,
+            selectedConnection: null
         }
     }
     updateForm = (formState) => {
@@ -45,8 +46,8 @@ export default class FrontPage extends React.Component {
     showResult = () => {
         this.setState({showScene: 2})
     }
-    showCart = () => {
-        this.setState({showScene: 3})
+    showCart = (connection) => {
+        this.setState({showScene: 3, selectedConnection: connection})
     }
     showScene = () => {
         if (this.state.showScene === 1)
@@ -59,7 +60,7 @@ export default class FrontPage extends React.Component {
         else if (this.state.showScene === 2)
             return <Result showForm={this.showForm} showCart={this.showCart} formState={this.state.formState}/>
         else if (this.state.showScene === 3)
-            return <Cart showForm={this.showForm} showResult={this.showResult}/>
+            return <Cart showForm={this.showForm} showResult={this.showResult} connection={this.state.selectedConnection}/>
     }
   render () {
       return (
