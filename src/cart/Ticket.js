@@ -51,7 +51,7 @@ export default class Ticket extends React.Component {
       return cost;
   }
   calculateCost = () => {
-      let cost = this.tarifReduction() * (this.numberOfPassangers ? this.numberOfPassangers : 1);
+      let cost = this.tarifReduction() * (this.state.numberOfPassangers ? this.state.numberOfPassangers : 1);
       if (this.state.isSms) cost += 5;
       if (this.state.isKolo) cost += 40;
       return cost;
