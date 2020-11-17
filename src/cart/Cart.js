@@ -17,7 +17,6 @@ import CartCard from "./CartCard";
 export default class Cart extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props.tickets);
     if (props.tickets.length >= 1)
       this.state = {
         tickets: [...props.tickets],
@@ -65,7 +64,7 @@ export default class Cart extends React.Component {
                     <Button
                       type="submit"
                       size={"large"}
-                      onClick={() => {console.log(this.state.tickets); this.props.saveTickets(this.state.tickets); this.props.showResult()}}
+                      onClick={() => {this.props.saveTickets(this.state.tickets); this.props.showResult()}}
                     >
                       Jet jindy
                     </Button>

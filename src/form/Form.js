@@ -15,6 +15,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import List from "@material-ui/core/List";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import Autocomplete from '@material-ui/lab/Autocomplete';
 import DateFnsUtils from "@date-io/date-fns";
 import Skeleton from "@material-ui/lab/Skeleton";
 import ImportExportIcon from "@material-ui/icons/ImportExport";
@@ -24,7 +25,7 @@ import {
   KeyboardDatePicker,
   MuiPickersUtilsProvider,
 } from "@material-ui/pickers";
-import { getStations, getStationById } from "../data/stations";
+import { getStations, getStationById, getStationByName } from "../data/stations";
 
 function MaterialUIPickers({ changeDate, date }) {
   // The first commit of Material-UI
@@ -64,6 +65,8 @@ export default class Form extends React.Component {
       dayOfDeparture: "0",
       time: props.formState.time,
       hasError: false,
+      toInputValue: "",
+      fromInputValue: ""
     };
   }
 
@@ -80,13 +83,17 @@ export default class Form extends React.Component {
     this.props.reBuy(historyBuy);
   }
 
-  onFromChange = (event) => {
-    if (this.state.to !== event.target.value)
-        this.setState({ from: event.target.value });
+  onFromChange = (newValue) => {
+    if (!newValue)
+        this.setState({ from: "" });
+    else if (this.state.to !== newValue.id)
+        this.setState({ from: newValue.id });
   };
-  onToChange = (event) => {
-    if (this.state.from !== event.target.value)
-        this.setState({ to: event.target.value });
+  onToChange = (newValue) => {
+    if (!newValue)
+        this.setState({ to: "" });
+    else if (this.state.from !== newValue.id)
+        this.setState({ to: newValue.id });
   };
   onTimeChange = (event) => {
     this.setState({ time: event.target.value });
@@ -171,20 +178,18 @@ export default class Form extends React.Component {
                           Toto je povinná položka!
                         </FormHelperText>
                       )}
-                      <Select
-                        fullWidth
-                        value={this.state.from}
-                        onChange={this.onFromChange}
-                        displayEmpty
-                        inputProps={{ "aria-label": "Without label" }}
-                      >
-                        <MenuItem value="" disabled>
-                          Stanice odkud
-                        </MenuItem>
-                        {this.destinations.map((x) => (
-                          <MenuItem value={x.id}>{x.name}</MenuItem>
-                        ))}
-                      </Select>
+                      <Autocomplete
+                        id="combo-box-demo"
+                        options={this.destinations}
+                        value={getStationById(this.state.from)}
+                        inputValue={this.state.fromInputValue}
+                        getOptionLabel={(option) => option.name}
+                        onInputChange={(event, newInputValue) => {
+                            this.setState({fromInputValue: newInputValue});
+                          }}
+                        onChange={(event, newValue) => this.onFromChange(newValue)}
+                        renderInput={(params) => <TextField {...params} label="Stanice odkud" variant="outlined" />}
+                        />
                     </Grid>
                     <Grid item xs={12}>
                       {this.state.hasError && !this.state.to && (
@@ -192,20 +197,18 @@ export default class Form extends React.Component {
                           Toto je povinná položka!
                         </FormHelperText>
                       )}
-                      <Select
-                        fullWidth
-                        value={this.state.to}
-                        onChange={this.onToChange}
-                        displayEmpty
-                        inputProps={{ "aria-label": "Without label" }}
-                      >
-                        <MenuItem value="" disabled>
-                          Stanice kam
-                        </MenuItem>
-                        {this.destinations.map((x) => (
-                          <MenuItem value={x.id}>{x.name}</MenuItem>
-                        ))}
-                      </Select>
+                                          <Autocomplete
+                        id="combo-box-demo"
+                        options={this.destinations}
+                        value={getStationById(this.state.to)}
+                        inputValue={this.state.toInputValue}
+                        onInputChange={(event, newInputValue) => {
+                            this.setState({toInputValue: newInputValue});
+                          }}
+                        getOptionLabel={(option) => option.name}
+                        onChange={(event, newValue) => this.onToChange(newValue)}
+                        renderInput={(params) => <TextField {...params} label="Stanice kam" variant="outlined" />}
+                        />
                     </Grid>
                   </Grid>
                   <Grid item xs={1} align="center">

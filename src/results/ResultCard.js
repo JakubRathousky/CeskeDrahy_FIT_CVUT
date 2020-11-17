@@ -8,7 +8,6 @@ import ConnectionHeader from "../common/ConnectionHeader";
 
 export default class ResultCart extends React.Component {
   render() {
-      console.log(this.props);
     return (
         <Box border={this.props.isActual ? 3 : 1} p={1} borderRadius={16}>
         <ConnectionHeader connection={this.props.connection} />

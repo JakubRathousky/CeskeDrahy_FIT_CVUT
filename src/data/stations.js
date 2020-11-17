@@ -13,3 +13,7 @@ export function getStationById(id) {
     let station = data.find(x => x.id === id);
     return station;
 }
+export function getStationByName(name) {
+    let station = data.find(x => x.name === name);
+    return station;
+}
