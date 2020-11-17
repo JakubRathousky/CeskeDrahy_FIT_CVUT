@@ -53,6 +53,29 @@ export default class Cart extends React.Component {
     this.setState({ tickets: tickets });
   };
 
+  tarifReduction = (tarif) => {
+    let cost = 40;
+
+    if (tarif === 10) cost = 40;
+    if (tarif === 20) cost = 0;
+    if (tarif === 30) cost = 10;
+    return cost;
+  }
+  calculateCost = (ticket) => {
+      let cost = this.tarifReduction(ticket.tarif) * (ticket.numberOfPassangers ? ticket.numberOfPassangers : 1);
+      if (ticket.isSms) cost += 5;
+      if (ticket.isKolo) cost += 40;
+      return cost;
+  }
+
+  calculateTotalCost = () => {
+    let cost = 0;
+    this.state.tickets.forEach(x => {
+      cost += this.calculateCost(x);
+    })
+    return cost;
+  }
+
   render() {
     return (
       <Grid container>
@@ -160,7 +183,7 @@ export default class Cart extends React.Component {
                       >
                         <AddShoppingCartIcon />
                         <Box mx={1}>
-                          <Typography>Přidat do košíku</Typography>
+                          <Typography>Přidat do košíku ({this.calculateTotalCost()},- Kč)</Typography>
                         </Box>
                       </Button>
                     </Box>

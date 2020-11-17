@@ -116,7 +116,7 @@ export default class Ticket extends React.Component {
               </Grid>
               <Grid item xs={12} sm={6} md={2}>
                 <Box border={1} align={"center"}>
-                  Cena: {this.calculateCost()} kč
+                  Cena: {this.calculateCost()},- Kč
                 </Box>
               </Grid>
             </Grid>
