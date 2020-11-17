@@ -142,9 +142,9 @@ export default class Result extends React.Component {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={12}>
+            {/* <Grid item xs={12}>
               <ResultCard connection={this.state.before} isActual={false} showCart={() => this.props.showCart(this.state.before)}/>
-            </Grid>
+            </Grid> */}
             <Grid item xs={12}>
               <ResultCard connection={this.state.actual} isActual={true} showCart={() => this.props.showCart(this.state.actual)}/>
             </Grid>
