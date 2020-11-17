@@ -117,7 +117,7 @@ export default class Cart extends React.Component {
                       Přidat do košíku
                     </Button>
                   </Box>
-                </Grid>)
+                </Grid>
               </Grid>
             </Grid>) : null}
           </Grid>
