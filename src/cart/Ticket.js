@@ -30,7 +30,7 @@ export default class Ticket extends React.Component {
     this.state = {
       isSms: props.ticket.isSms,
       sms: props.ticket.sms,
-      isKolo: props.ticket.iskolo,
+      isKolo: props.ticket.isKolo,
       isMistenka: props.ticket.isMistenka,
       tarif: props.ticket.tarif,
       numberOfPassangers: props.ticket.numberOfPassangers,
@@ -176,6 +176,7 @@ export default class Ticket extends React.Component {
               <Grid item xs={12} sm={6} md={3}>
                 {this.state.isSms ? (
                   <MuiPhoneNumber
+                    value={this.state.sms}
                     defaultCountry={"cz"}
                     onChange={(value) => this.updateTicket({...this.props.ticket, ...{ sms: value }})}
                   />

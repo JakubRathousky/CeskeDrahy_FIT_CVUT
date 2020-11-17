@@ -50,6 +50,7 @@ export default class Cart extends React.Component {
   updateTicket = (ticket, index) => {
     let tickets = this.state.tickets;
     tickets[index] = ticket;
+    console.log(ticket);
     this.setState({ tickets: tickets });
   };
 
