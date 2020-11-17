@@ -26,6 +26,7 @@ import {
   MuiPickersUtilsProvider,
 } from "@material-ui/pickers";
 import { getStations, getStationById, getStationByName } from "../data/stations";
+import '../App.css';
 
 function MaterialUIPickers({ changeDate, date }) {
   // The first commit of Material-UI
@@ -332,7 +333,7 @@ export default class Form extends React.Component {
                   <Grid item sm={4}></Grid>
                   <Grid item sm={4}></Grid>
                   <Grid item sm={4} align="right">
-                    <Button type="submit" onClick={this.onSearch}>
+                    <Button className="search-tlacitko" type="submit" onClick={this.onSearch}>
                       {" "}
                       Vyhledat{" "}
                     </Button>
@@ -380,7 +381,7 @@ export default class Form extends React.Component {
         <Grid item xs={12} sm={6} md={3}>
           <Grid container>
               {this.state.buyHistory.length > 0 ? (
-            <Box border={1} my={3}>
+            <Box border={1} my={3} className="result">
               <List component="nav" aria-label="main mailbox folders">
                 {this.state.buyHistory.map((x) => (
                   <Grid container>
@@ -416,7 +417,7 @@ export default class Form extends React.Component {
                     <Grid item xs={12} sm={6} md={4}></Grid>
                     <Grid item xs={12} sm={6} md={8}>
                       <Button onClick={() => this.reBuy(x)}>
-                        <Box m={1} border={1}>zakoupit</Box>
+                        <Box m={1} className="search-tlacitko">zakoupit</Box>
                       </Button>
                     </Grid>
                   </Grid>

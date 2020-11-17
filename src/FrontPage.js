@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Form from './form/Form';
 import Result from './results/Result';
 import Cart from './cart/Cart'
+import './App.css';
 
 export default class FrontPage extends React.Component {
     formInit = {
@@ -97,7 +98,7 @@ export default class FrontPage extends React.Component {
       return (
         <React.Fragment>
             <CssBaseline />
-            <AppBar position="relative">
+            <AppBar position="relative" class="appbar">
                 <Toolbar>
                 <Typography variant="h6" color="inherit" noWrap>
                     České dráhy

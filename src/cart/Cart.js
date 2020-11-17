@@ -13,6 +13,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MuiPhoneNumber from "material-ui-phone-number";
 import ConnectionHeader from "../common/ConnectionHeader";
 import CartCard from "./CartCard";
+import '../App.css';
 
 export default class Cart extends React.Component {
   constructor(props) {
@@ -60,7 +61,7 @@ export default class Cart extends React.Component {
               <Grid container>
                 <Grid item xs={12} sm={6} md={3} align="center">
                 {!this.state.bought ? (
-                  <Box border={1} borderRadius={16}>
+                  <Box border={1} borderRadius={16} className="tlacitko">
                     <Button
                       type="submit"
                       size={"large"}
@@ -72,7 +73,7 @@ export default class Cart extends React.Component {
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}></Grid>
                 <Grid item xs={12} sm={6} md={3} align="center">
-                  <Box border={1} borderRadius={16}>
+                  <Box border={1} borderRadius={16} className="tlacitko">
                     <Button
                       type="submit"
                       size={"large"}
@@ -102,7 +103,7 @@ export default class Cart extends React.Component {
             <Grid item xs={12}>
               <Grid container>
                 <Grid item xs={12} sm={6} md={1} align="center">
-                  <Box border={1} borderRadius={16}>
+                  <Box border={1} borderRadius={16} className="kupit-tlacitko">
                     <Button type="submit" size={"large"}
                       onClick={() => this.setState({tickets: [...this.state.tickets, this.createNewTicket()] })}
                     >
@@ -112,7 +113,7 @@ export default class Cart extends React.Component {
                 </Grid>
                 <Grid item xs={12} sm={6} md={8}></Grid>
                 <Grid item xs={12} sm={6} md={3} align="center">
-                  <Box border={1} borderRadius={16}>
+                  <Box border={1} borderRadius={16} className="kupit-tlacitko">
                     <Button type="submit" size={"large"} onClick={() => {this.props.buyTickets(this.state.tickets, this.props.connection);this.setState({bought:true})}}>
                       Přidat do košíku
                     </Button>

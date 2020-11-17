@@ -9,7 +9,7 @@ import ConnectionHeader from "../common/ConnectionHeader";
 export default class ResultCart extends React.Component {
   render() {
     return (
-        <Box border={this.props.isActual ? 3 : 1} p={1} borderRadius={16}>
+        <Box border={this.props.isActual ? 3 : 1} p={1} borderRadius={16} className="result">
         <ConnectionHeader connection={this.props.connection} />
         <Grid container>
           <Grid item xs={12} sm={6} md={4}>
@@ -27,7 +27,7 @@ export default class ResultCart extends React.Component {
             </Grid>
           </Grid>
           <Grid item xs={12} sm={6} md={3} align="center">
-            <Box border={1} borderRadius={16}>
+            <Box border={1} borderRadius={16} className="kupit-tlacitko">
               <Button type="submit" size={"large"} onClick={this.props.showCart}>
                 40,- Kč
               </Button>

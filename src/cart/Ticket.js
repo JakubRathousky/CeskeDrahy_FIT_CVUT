@@ -73,7 +73,7 @@ export default class Ticket extends React.Component {
               <Grid item xs={12} sm={6} md={9}>
               </Grid>
               <Grid item xs={12} sm={6} md={2}>
-                <Box border={1} my={1} align={"center"}>
+                <Box border={1} my={1} borderRadius={16} align={"center"} className="odebrat-tlacitko">
                   <Button onClick={() => this.props.removeTicket(this.props.index)}>Odebrat</Button>
                 </Box>
               </Grid>

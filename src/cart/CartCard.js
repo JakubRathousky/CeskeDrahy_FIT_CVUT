@@ -9,7 +9,7 @@ export default class CartCard extends React.Component {
     let counter = 0;
     return (
       <Grid item xs={12}>
-        <Box border={1} p={1} borderRadius={16}>
+        <Box border={1} p={1} borderRadius={16} className="result">
           <ConnectionHeader connection={this.props.connection} />
          {this.props.tickets.map(x => <Ticket 
             ticket={x}

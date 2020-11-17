@@ -150,12 +150,12 @@ export default class ConnectionHeader extends React.Component {
           <Grid item xs={12} sm={6} md={4}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <Typography component="p">Aktuální zpoždění: 245 m</Typography>
+                <Typography component="p" className="zpozdeni-red">Aktuální zpoždění: 245 m</Typography>
               </Grid>
             </Grid>
           </Grid>
           <Grid item xs={12} sm={6} md={3} align="center">
-            <Box border={1} borderRadius={16}>
+            <Box border={1} borderRadius={16} className="tlacitko">
               <Button
                 type="submit"
                 size={"large"}

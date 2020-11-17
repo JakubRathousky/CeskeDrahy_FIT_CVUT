@@ -32,3 +32,45 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* custom styles */
+
+.zpozdeni-red {
+  color: #F00;
+}
+
+.zpozdeni-green {
+  color: #0F0;
+}
+
+.tlacitko {
+  background: #009FDA !important;
+  border: none !important;
+  color: #FFF !important;
+}
+
+.kupit-tlacitko, .search-tlacitko {
+  background: #84BF00 !important;
+  border: none !important;
+  color: #FFF !important;
+}
+
+.odebrat-tlacitko {
+  background: #F00 !important;
+  border: none !important;
+  color: #FFF !important;
+}
+
+.tlacitko span, .kupit-tlacitko span, .odebrat-tlacitko span {
+ color: #FFF !important;
+}
+
+.result {
+  background: #ddf4fd;
+}
+
+.appbar {
+  background: #002664;
+  color: #FFF;
+}
