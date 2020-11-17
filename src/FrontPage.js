@@ -23,15 +23,25 @@ export default class FrontPage extends React.Component {
             formState: this.formInit,
             searchHistory: [],
             buyHistory: [],
+            tickets: [],
             showScene: 1,
             selectedConnection: null
         }
     }
+    dateFormat = (date) => {
+        return (date.getDate()) + 
+        "." +  (date.getMonth() + 1) +
+        "." +  date.getFullYear();
+      }
+    
+    setTime = (time, nextDay) => {
+        return time + ", " + this.dateFormat(nextDay);
+      }
     updateForm = (formState) => {
         let history = this.state.searchHistory.find(x => x.to == formState.to && x.from == formState.from);
         const searchHistory = this.state.searchHistory;
         if (!history)
-            searchHistory.push({from: formState.from, to: formState.to});
+            searchHistory.push({from: formState.from, to: formState.to, direction: formState.direction});
         this.setState({
             formState: formState,
             searchHistory: searchHistory
@@ -49,6 +59,14 @@ export default class FrontPage extends React.Component {
     showCart = (connection) => {
         this.setState({showScene: 3, selectedConnection: connection})
     }
+    reBuy = (historyBuy) => {
+        let nextDay = new Date();
+        nextDay.setDate((new Date()).getDate() + 1);
+        if (new Date("1970-01-01 "+historyBuy.connection.odjezd) <= new Date("1970-01-01 "+(new Date()).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})))
+            historyBuy.connection.vlak.forEach(x => x.stanice.forEach(y => y.alteredTime = this.setTime(y.cas, nextDay)));
+        historyBuy.tickets.forEach(x => {x.isSms = false; x.isKolo = false; x.isMistenka = false});
+        this.setState({tickets: historyBuy.tickets, selectedConnection: historyBuy.connection, showScene: 3})
+    }
     showScene = () => {
         if (this.state.showScene === 1)
             return <Form 
@@ -56,11 +74,24 @@ export default class FrontPage extends React.Component {
                         formState={this.state.formState}
                         buyHistory={this.state.buyHistory}
                         searchHistory={this.state.searchHistory}
-                        updateForm={this.updateForm} />
+                        updateForm={this.updateForm}
+                        reBuy={this.reBuy}
+                    />
         else if (this.state.showScene === 2)
-            return <Result showForm={this.showForm} showCart={this.showCart} formState={this.state.formState}/>
+            return <Result 
+                showForm={this.showForm}
+                showCart={this.showCart}
+                formState={this.state.formState}
+            />
         else if (this.state.showScene === 3)
-            return <Cart showForm={this.showForm} showResult={this.showResult} connection={this.state.selectedConnection}/>
+            return <Cart
+                showForm={this.showForm}
+                showResult={this.showResult}
+                saveTickets={(tickets) => this.setState({tickets: tickets})}
+                buyTickets={(tickets, connections) => {this.setState({buyHistory: [...this.state.buyHistory, {connection: connections, tickets: tickets}]})}}
+                tickets={this.state.tickets}
+                connection={this.state.selectedConnection}
+            />
     }
   render () {
       return (

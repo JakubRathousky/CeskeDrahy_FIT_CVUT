@@ -25,22 +25,22 @@ import {
 import ConnectionHeader from "../common/ConnectionHeader";
 
 export default class Ticket extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      isSms: false,
-      sms: "",
-      isKolo: false,
-      isMistenka: false,
-      tarif: "",
-      numberOfPassangers: 1,
+      isSms: props.ticket.isSms,
+      sms: props.ticket.sms,
+      isKolo: props.ticket.iskolo,
+      isMistenka: props.ticket.isMistenka,
+      tarif: props.ticket.tarif,
+      numberOfPassangers: props.ticket.numberOfPassangers,
       cost: 40
     };
   }
 
   updateTicket = (newState) => {
       this.props.updateTicket(newState, this.props.index);
-      this.setState({...newState});
+        this.setState({...newState});
   }
   tarifReduction = () => {
       let cost = 40;

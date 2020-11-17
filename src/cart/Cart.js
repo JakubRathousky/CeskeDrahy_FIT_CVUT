@@ -8,17 +8,26 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
 import Checkbox from "@material-ui/core/Checkbox";
 import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
 import InputLabel from "@material-ui/core/InputLabel";
 import MuiPhoneNumber from "material-ui-phone-number";
 import ConnectionHeader from "../common/ConnectionHeader";
 import CartCard from "./CartCard";
 
 export default class Cart extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      tickets: [this.createNewTicket()],
-    };
+  constructor(props) {
+    super(props);
+    console.log(props.tickets);
+    if (props.tickets.length >= 1)
+      this.state = {
+        tickets: [...props.tickets],
+        bought: false
+      }
+    else
+      this.state = {
+        tickets: [this.createNewTicket()],
+        bought: false
+      };
   }
 
   createNewTicket = () => {
@@ -27,7 +36,7 @@ export default class Cart extends React.Component {
       sms: "",
       isKolo: false,
       isMistenka: false,
-      tarif: "",
+      tarif: 10,
       numberOfPassangers: 1,
     }
   }
@@ -51,15 +60,16 @@ export default class Cart extends React.Component {
             <Grid item xs={12}>
               <Grid container>
                 <Grid item xs={12} sm={6} md={3} align="center">
+                {!this.state.bought ? (
                   <Box border={1} borderRadius={16}>
                     <Button
                       type="submit"
                       size={"large"}
-                      onClick={() => this.props.showResult()}
+                      onClick={() => {console.log(this.state.tickets); this.props.saveTickets(this.state.tickets); this.props.showResult()}}
                     >
                       Jet jindy
                     </Button>
-                  </Box>
+                  </Box>) : null}
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}></Grid>
                 <Grid item xs={12} sm={6} md={3} align="center">
@@ -75,7 +85,21 @@ export default class Cart extends React.Component {
                 </Grid>
               </Grid>
             </Grid>
-            {<CartCard connection={this.props.connection} tickets={this.state.tickets} removeTicket={this.removeTicket} updateTicket={this.updateTicket}/>}
+            { !this.state.bought ? <CartCard
+              connection={this.props.connection}
+              tickets={this.state.tickets}
+              removeTicket={this.removeTicket}
+              updateTicket={this.updateTicket}
+              buyTickets={this.props.buyTickets} /> : (
+                <Grid item xs={12}>
+                <Grid container align="center">
+                <Typography variant="h5" noWrap>
+                    Děkujeme za nákup!
+                </Typography>
+                </Grid>
+              </Grid>
+              )}
+              {!this.state.bought ? (
             <Grid item xs={12}>
               <Grid container>
                 <Grid item xs={12} sm={6} md={1} align="center">
@@ -90,13 +114,13 @@ export default class Cart extends React.Component {
                 <Grid item xs={12} sm={6} md={8}></Grid>
                 <Grid item xs={12} sm={6} md={3} align="center">
                   <Box border={1} borderRadius={16}>
-                    <Button type="submit" size={"large"} onClick={() => {}}>
+                    <Button type="submit" size={"large"} onClick={() => {this.props.buyTickets(this.state.tickets, this.props.connection);this.setState({bought:true})}}>
                       Přidat do košíku
                     </Button>
                   </Box>
-                </Grid>
+                </Grid>)
               </Grid>
-            </Grid>
+            </Grid>) : null}
           </Grid>
         </Grid>
         <Grid item xs={12} sm={6} md={2}></Grid>

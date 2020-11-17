@@ -28,7 +28,7 @@ export default class Result extends React.Component {
       hasError: false,
       before: null,
       actual: null,
-      future: []
+      future: [],
     };
   }
 
