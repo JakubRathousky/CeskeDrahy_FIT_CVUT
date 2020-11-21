@@ -9,6 +9,7 @@ import Form from './form/Form';
 import Result from './results/Result';
 import Cart from './cart/Cart'
 import './App.css';
+import { getStationByName } from './data/stations';
 
 export default class FrontPage extends React.Component {
     formInit = {
@@ -66,7 +67,12 @@ export default class FrontPage extends React.Component {
         if (new Date("1970-01-01 "+historyBuy.connection.odjezd) <= new Date("1970-01-01 "+(new Date()).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})))
             historyBuy.connection.vlak.forEach(x => x.stanice.forEach(y => y.alteredTime = this.setTime(y.cas, nextDay)));
         historyBuy.tickets.forEach(x => {x.isSms = false; x.isKolo = false; x.isMistenka = false});
-        this.setState({tickets: historyBuy.tickets, selectedConnection: historyBuy.connection, showScene: 3})
+        let tempState = this.formInit;
+        tempState.from = getStationByName(historyBuy.connection.start).id;
+        tempState.to = getStationByName(historyBuy.connection.cil).id;
+        tempState.date = nextDay;
+        tempState.time = historyBuy.connection.odjezd;
+        this.setState({tickets: historyBuy.tickets, selectedConnection: historyBuy.connection, showScene: 3, formState: tempState})
     }
     showScene = () => {
         if (this.state.showScene === 1)
