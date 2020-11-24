@@ -397,7 +397,7 @@ export default class Form extends React.Component {
                         }
                       />
                       <ListItemIcon>
-                        <SearchIcon />
+                        <SearchIcon className="search-icon" />
                       </ListItemIcon>
                     </ListItem>
                   ))}

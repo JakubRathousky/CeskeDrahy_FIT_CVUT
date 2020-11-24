@@ -74,3 +74,8 @@
   background: #002664;
   color: #FFF;
 }
+
+.search-icon {
+  cursor: pointer;
+}
+
