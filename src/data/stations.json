@@ -1,5 +1,6 @@
 [
   { "name": "Říčany", "id": 10 },
   { "name": "Praha, hl.n.", "id": 20 },
-  { "name": "Beroun", "id": 30 }
+  { "name": "Beroun", "id": 30 },
+  { "name": "Praha - Vršovice", "id": 40 }
 ]

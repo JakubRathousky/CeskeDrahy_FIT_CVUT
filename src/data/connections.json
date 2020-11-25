@@ -1,3 +1,4 @@
+  
 [
   {
     "start": "Praha, hl.n.",
@@ -11,6 +12,28 @@
         "sluzby": ["kolo", "vozicek"],
         "stanice": [
           { "nazev": "Praha - hl.n.", "cas": "8:05" },
+          { "nazev": "Praha - Vršovice", "cas": "8:10" },
+          { "nazev": "Praha - Strašnice", "cas": "8:14" },
+          { "nazev": "Praha - Hostivař", "cas": "8:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "8:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "8:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "8:29" },
+          { "nazev": "Říčany", "cas": "8:32" }
+        ]
+      }
+    ]
+  },
+  {
+    "start": "Praha - Vršovice",
+    "cil": "Říčany",
+    "odjezd": "8:10",
+    "prijezd": "8:32",
+    "doba": "22 minut",
+    "vlak": [
+      {
+        "kod": "OS 2521",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [         
           { "nazev": "Praha - Vršovice", "cas": "8:10" },
           { "nazev": "Praha - Strašnice", "cas": "8:14" },
           { "nazev": "Praha - Hostivař", "cas": "8:20" },
@@ -45,6 +68,27 @@
       }
     ]
   },
+  {
+    "start": "Praha - Vršovice",
+    "cil": "Říčany",
+    "odjezd": "8:40",
+    "prijezd": "9:02",
+    "doba": "22 minut",
+    "vlak": [
+      {
+        "kod": "OS 2523",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [          
+          { "nazev": "Praha - Vršovice", "cas": "8:40" },
+          { "nazev": "Praha - Strašnice", "cas": "8:40" },
+          { "nazev": "Praha - Hostivař", "cas": "8:50" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "8:52" },
+          { "nazev": "Praha - Uhřiněves", "cas": "8:56" },
+          { "nazev": "Říčany", "cas": "9:02" }
+        ]
+      }
+    ]
+  },
 
   {
     "start": "Praha, hl.n.",
@@ -58,6 +102,28 @@
         "sluzby": ["kolo", "vozicek"],
         "stanice": [
           { "nazev": "Praha - hl.n.", "cas": "9:05" },
+          { "nazev": "Praha - Vršovice", "cas": "9:10" },
+          { "nazev": "Praha - Strašnice", "cas": "9:14" },
+          { "nazev": "Praha - Hostivař", "cas": "9:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "9:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "9:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "9:29" },
+          { "nazev": "Říčany", "cas": "9:32" }
+        ]
+      }
+    ]
+  },
+   {
+    "start": "Praha - Vršovice",
+    "cil": "Říčany",
+    "odjezd": "9:10",
+    "prijezd": "9:32",
+    "doba": "22 minut",
+    "vlak": [
+      {
+        "kod": "OS 2525",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [          
           { "nazev": "Praha - Vršovice", "cas": "9:10" },
           { "nazev": "Praha - Strašnice", "cas": "9:14" },
           { "nazev": "Praha - Hostivař", "cas": "9:20" },
@@ -94,6 +160,28 @@
     ]
   },
   {
+    "start": "Praha - Vršovice",
+    "cil": "Říčany",
+    "odjezd": "10:10",
+    "prijezd": "10:32",
+    "doba": "22 minut",
+    "vlak": [
+      {
+        "kod": "OS 2529",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [          
+          { "nazev": "Praha - Vršovice", "cas": "10:10" },
+          { "nazev": "Praha - Strašnice", "cas": "10:14" },
+          { "nazev": "Praha - Hostivař", "cas": "10:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "10:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "10:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "10:29" },
+          { "nazev": "Říčany", "cas": "10:32" }
+        ]
+      }
+    ]
+  },
+  {
     "start": "Praha, hl.n.",
     "cil": "Říčany",
     "odjezd": "12:05",
@@ -117,6 +205,28 @@
     ]
   },
   {
+    "start": "Praha - Vršovice",
+    "cil": "Říčany",
+    "odjezd": "12:10",
+    "prijezd": "12:32",
+    "doba": "22 minut",
+    "vlak": [
+      {
+        "kod": "OS 2537",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [          
+          { "nazev": "Praha - Vršovice", "cas": "12:10" },
+          { "nazev": "Praha - Strašnice", "cas": "12:14" },
+          { "nazev": "Praha - Hostivař", "cas": "12:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "12:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "12:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "12:29" },
+          { "nazev": "Říčany", "cas": "12:32" }
+        ]
+      }
+    ]
+  },
+  {
     "start": "Praha, hl.n.",
     "cil": "Říčany",
     "odjezd": "14:05",
@@ -128,6 +238,28 @@
         "sluzby": ["kolo", "vozicek"],
         "stanice": [
           { "nazev": "Praha - hl.n.", "cas": "14:05" },
+          { "nazev": "Praha - Vršovice", "cas": "14:10" },
+          { "nazev": "Praha - Strašnice", "cas": "14:14" },
+          { "nazev": "Praha - Hostivař", "cas": "14:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "14:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "14:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "14:29" },
+          { "nazev": "Říčany", "cas": "14:32" }
+        ]
+      }
+    ]
+  },
+   {
+    "start": "Praha - Vršovice",
+    "cil": "Říčany",
+    "odjezd": "14:10",
+    "prijezd": "14:32",
+    "doba": "22 minut",
+    "vlak": [
+      {
+        "kod": "OS 2541",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [          
           { "nazev": "Praha - Vršovice", "cas": "14:10" },
           { "nazev": "Praha - Strašnice", "cas": "14:14" },
           { "nazev": "Praha - Hostivař", "cas": "14:20" },
@@ -163,6 +295,28 @@
     ]
   },
   {
+    "start": "Praha - Vršovice",
+    "cil": "Říčany",
+    "odjezd": "16:10",
+    "prijezd": "16:32",
+    "doba": "22 minut",
+    "vlak": [
+      {
+        "kod": "OS 2547",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [          
+          { "nazev": "Praha - Vršovice", "cas": "16:10" },
+          { "nazev": "Praha - Strašnice", "cas": "16:14" },
+          { "nazev": "Praha - Hostivař", "cas": "16:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "16:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "16:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "16:29" },
+          { "nazev": "Říčany", "cas": "16:32" }
+        ]
+      }
+    ]
+  },
+  {
     "start": "Praha, hl.n.",
     "cil": "Říčany",
     "odjezd": "18:05",
@@ -174,6 +328,28 @@
         "sluzby": ["kolo", "vozicek"],
         "stanice": [
           { "nazev": "Praha - hl.n.", "cas": "18:05" },
+          { "nazev": "Praha - Vršovice", "cas": "18:10" },
+          { "nazev": "Praha - Strašnice", "cas": "18:14" },
+          { "nazev": "Praha - Hostivař", "cas": "18:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "18:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "18:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "18:29" },
+          { "nazev": "Říčany", "cas": "18:32" }
+        ]
+      }
+    ]
+  },
+   {
+    "start": "Praha - Vršovice",
+    "cil": "Říčany",
+    "odjezd": "18:10",
+    "prijezd": "18:32",
+    "doba": "22 minut",
+    "vlak": [
+      {
+        "kod": "OS 2551",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [          
           { "nazev": "Praha - Vršovice", "cas": "18:10" },
           { "nazev": "Praha - Strašnice", "cas": "18:14" },
           { "nazev": "Praha - Hostivař", "cas": "18:20" },
@@ -208,6 +384,30 @@
       }
     ]
   },
+   {
+    "start": "Praha - Vršovice",
+    "cil": "Říčany",
+    "odjezd": "20:10",
+    "prijezd": "20:32",
+    "doba": "22 minut",
+    "vlak": [
+      {
+        "kod": "OS 2553",
+        "sluzby": ["kolo", "vozicek"],
+        "stanice": [           
+          { "nazev": "Praha - Vršovice", "cas": "20:10" },
+          { "nazev": "Praha - Strašnice", "cas": "20:14" },
+          { "nazev": "Praha - Hostivař", "cas": "20:20" },
+          { "nazev": "Praha - Hor.Měcholupy", "cas": "20:22" },
+          { "nazev": "Praha - Uhřiněves", "cas": "20:26" },
+          { "nazev": "Praha - Kolovraty", "cas": "20:29" },
+          { "nazev": "Říčany", "cas": "20:32" }
+        ]
+      }
+    ]
+  },
+  
+  
 
   {
     "start": "Říčany",

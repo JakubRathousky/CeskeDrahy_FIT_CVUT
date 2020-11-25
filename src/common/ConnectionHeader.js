@@ -48,7 +48,9 @@ export default class ConnectionHeader extends React.Component {
             <Grid container>
               <Grid item xs={12} sm={6} md={1}></Grid>
               <Grid item xs={12} sm={6} md={2}>
-                <ArrowDropDownIcon fontSize="large" />
+                <ArrowDropDownIcon fontSize="large"                 onClick={() => {
+                  this.setState({ isDetail: !this.state.isDetail });
+                }}/>
               </Grid>
               <Grid item xs={12} sm={6} md={9}></Grid>
             </Grid>
