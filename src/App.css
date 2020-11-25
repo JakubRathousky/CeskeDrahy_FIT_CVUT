@@ -75,7 +75,7 @@
   color: #FFF;
 }
 
-.search-icon {
+.search-icon, .detail-arrow {
   cursor: pointer;
 }
 
