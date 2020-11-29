@@ -76,6 +76,17 @@ export default class Form extends React.Component {
     };
   }
 
+  calculateCost = (tickets) => {
+    let cost = 0;
+    tickets.forEach(x => {
+      console.log(x);
+      if (x.tarif === 10) cost += 40 * x.numberOfPassangers;
+      if (x.tarif === 20) cost += 0 * x.numberOfPassangers;
+      if (x.tarif === 30) cost += 10 * x.numberOfPassangers;
+    })
+    return cost;
+  }
+
   convertTarif = (number) => {
     if (number === 10) return "dospělý";
     if (number === 20) return "senior";
@@ -411,8 +422,17 @@ export default class Form extends React.Component {
           <Grid container>
             {this.state.buyHistory.length > 0 ? (
               <Box border={1} my={3} className="result">
-                <List component="nav" aria-label="main mailbox folders">
+                    <Grid container>
+                      <Grid item xs={12} sm={6} md={2}></Grid>
+                      <Grid item xs={12} sm={6} md={8}>
+                        <Box m={1} align='center'>
+                          <Typography> <Box fontWeight="fontWeightBold">Historie nákupů</Box></Typography>
+                        </Box>
+                      </Grid>
+                    </Grid>
                   {this.state.buyHistory.map((x) => (
+                    <React.Fragment>
+
                     <Grid container>
                       <Grid item xs={12} sm={6} md={5}>
                         <Typography align="center">
@@ -460,14 +480,14 @@ export default class Form extends React.Component {
                           >
                             <AddShoppingCartIcon />
                         <Box mx={1}>
-                          <Typography>Zakoupit</Typography>
+                          <Typography>{this.calculateCost(x.tickets)},- KČ</Typography>
                         </Box>
                           </Button>
                         </Box>
                       </Grid>
                     </Grid>
+                    </React.Fragment>
                   ))}
-                </List>
               </Box>
             ) : null}
           </Grid>
