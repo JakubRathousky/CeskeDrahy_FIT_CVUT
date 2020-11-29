@@ -18,6 +18,8 @@ import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import Box from "@material-ui/core/Box";
 import InputLabel from "@material-ui/core/InputLabel";
 import MuiPhoneNumber from "material-ui-phone-number";
+
+import AddIcon from '@material-ui/icons/Add';
 import {
   KeyboardDatePicker,
   MuiPickersUtilsProvider,
@@ -206,7 +208,7 @@ export default class Ticket extends React.Component {
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={1}></Grid>
-              <Grid item xs={12} sm={6} md={4}>
+              <Grid item xs={12} sm={6} md={3}>
                 {this.state.isKolo ? (
                   <Box border={1} py={1} align={"center"}>
                     Kolo 2 | Vůz 369
@@ -214,7 +216,7 @@ export default class Ticket extends React.Component {
                 ) : null}
               </Grid>
               <Grid item xs={12} sm={6} md={1}></Grid>
-              <Grid item xs={12} sm={6} md={2}>
+              <Grid item xs={12} sm={6} md={3}>
                {this.props.showPlus ? ( <Box
                       border={1}
                       borderRadius={16}
@@ -226,7 +228,7 @@ export default class Ticket extends React.Component {
                         fullWidth={true}
                         onClick={this.props.addTicket}
                       >
-                        Přidat jízdenku
+                         <AddIcon/>Přidat jízdenku
                       </Button>
                     </Box> ) : null}
               </Grid>
