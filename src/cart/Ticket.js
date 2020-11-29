@@ -70,7 +70,7 @@ export default class Ticket extends React.Component {
         {this.props.index !== 0 ? (        <Grid container>
           <Grid item xs={12} sm={12} md={12}>
             <Grid container>
-              <Grid item xs={12} sm={6} md={9}>
+              <Grid item xs={12} sm={6} md={10}>
               </Grid>
               <Grid item xs={12} sm={6} md={2}>
                 <Box border={1} my={1} borderRadius={16} align={"center"} className="odebrat-tlacitko">
@@ -206,14 +206,30 @@ export default class Ticket extends React.Component {
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={1}></Grid>
-              <Grid item xs={12} sm={6} md={3}>
+              <Grid item xs={12} sm={6} md={4}>
                 {this.state.isKolo ? (
                   <Box border={1} py={1} align={"center"}>
                     Kolo 2 | Vůz 369
                   </Box>
                 ) : null}
               </Grid>
-              <Grid item xs={12} sm={6} md={3}></Grid>
+              <Grid item xs={12} sm={6} md={1}></Grid>
+              <Grid item xs={12} sm={6} md={2}>
+               {this.props.showPlus ? ( <Box
+                      border={1}
+                      borderRadius={16}
+                      className="kupit-tlacitko"
+                    >
+                      <Button
+                        type="submit"
+                        size={"small"}
+                        fullWidth={true}
+                        onClick={this.props.addTicket}
+                      >
+                        Přidat jízdenku
+                      </Button>
+                    </Box> ) : null}
+              </Grid>
             </Grid>
           </Grid>
           <Grid item xs={12} sm={6} md={4}></Grid>

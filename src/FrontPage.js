@@ -51,9 +51,9 @@ export default class FrontPage extends React.Component {
     }
     showForm = (isCleanLoad) => {
         if (isCleanLoad)
-            this.setState({formState: this.formInit, showScene: 1 })
+            this.setState({formState: this.formInit, showScene: 1, tickets: [] })
         else
-            this.setState({showScene: 1})
+            this.setState({showScene: 1, tickets: []})
     }
     showResult = () => {
         this.setState({showScene: 2})
@@ -89,6 +89,8 @@ export default class FrontPage extends React.Component {
                 showForm={this.showForm}
                 showCart={this.showCart}
                 formState={this.state.formState}
+                tickets={this.state.tickets}
+                isFromCart={this.state.tickets.length > 0}
             />
         else if (this.state.showScene === 3)
             return <Cart

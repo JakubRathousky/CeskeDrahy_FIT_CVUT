@@ -25,16 +25,19 @@ export default class Cart extends React.Component {
       this.state = {
         tickets: [...props.tickets],
         bought: false,
+        nextId: 1
       };
     else
       this.state = {
-        tickets: [this.createNewTicket()],
+        tickets: [this.createNewTicket(true)],
         bought: false,
+        nextId: 1
       };
   }
 
-  createNewTicket = () => {
+  createNewTicket = (first) => {
     return {
+      id: first ? 0 : this.state.nextId,
       isSms: false,
       sms: "",
       isKolo: false,
@@ -44,7 +47,10 @@ export default class Cart extends React.Component {
     };
   };
   removeTicket = (index) => {
-    this.setState({ tickets: this.state.tickets.splice(index, 1) });
+    let tickets = this.state.tickets;
+    tickets.splice(index, 1);
+    console.log(tickets);
+    this.setState({ tickets: tickets });
   };
 
   updateTicket = (ticket, index) => {
@@ -125,6 +131,13 @@ export default class Cart extends React.Component {
               <CartCard
                 connection={this.props.connection}
                 tickets={this.state.tickets}
+                addTicket={() => this.setState({
+                    tickets: [
+                      ...this.state.tickets,
+                      this.createNewTicket(false),
+                    ],
+                    nextId: this.state.nextId + 1
+                  })}
                 removeTicket={this.removeTicket}
                 updateTicket={this.updateTicket}
                 buyTickets={this.props.buyTickets}
@@ -142,27 +155,7 @@ export default class Cart extends React.Component {
               <Grid item xs={12}>
                 <Grid container>
                   <Grid item xs={12} sm={6} md={1} align="center">
-                    <Box
-                      border={1}
-                      borderRadius={16}
-                      className="kupit-tlacitko"
-                    >
-                      <Button
-                        type="submit"
-                        size={"large"}
-                        fullWidth={true}
-                        onClick={() =>
-                          this.setState({
-                            tickets: [
-                              ...this.state.tickets,
-                              this.createNewTicket(),
-                            ],
-                          })
-                        }
-                      >
-                        +
-                      </Button>
-                    </Box>
+
                   </Grid>
                   <Grid item xs={12} sm={6} md={8}></Grid>
                   <Grid item xs={12} sm={6} md={3} align="center">

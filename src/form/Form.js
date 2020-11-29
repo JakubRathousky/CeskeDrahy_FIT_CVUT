@@ -188,11 +188,9 @@ export default class Form extends React.Component {
                 >
                   <Grid item xs={11}>
                     <Grid item xs={12}>
-                      {this.state.hasError && !this.state.from && (
                         <FormHelperText error>
                           Toto je povinná položka!
                         </FormHelperText>
-                      )}
                       <Autocomplete
                         id="combo-box-demo"
                         options={this.destinations}
@@ -216,11 +214,9 @@ export default class Form extends React.Component {
                     </Grid>
                     <Grid item xs={12}>
                       <Box my={1}>
-                        {this.state.hasError && !this.state.to && (
                           <FormHelperText error>
                             Toto je povinná položka!
                           </FormHelperText>
-                        )}
                         <Autocomplete
                           id="combo-box-demo"
                           options={this.destinations}
@@ -316,14 +312,16 @@ export default class Form extends React.Component {
                 </Box>
                 <Grid container spacing={1}>
                   <Grid item sm={3} align="left">
-                    {this.state.hasError && !this.state.time && (
+                  </Grid>
+                  <Grid item sm={5}>
+                    {this.state.hasError && !this.state.direction && (
                       <FormHelperText error>
                         Toto je povinná položka!
                       </FormHelperText>
                     )}
                   </Grid>
-                  <Grid item sm={9}>
-                    {this.state.hasError && !this.state.direction && (
+                  <Grid item sm={4}>
+                  {this.state.hasError && !this.state.time && (
                       <FormHelperText error>
                         Toto je povinná položka!
                       </FormHelperText>
