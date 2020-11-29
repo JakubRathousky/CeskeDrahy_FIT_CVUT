@@ -332,17 +332,9 @@ export default class Form extends React.Component {
                 </Grid>
                 <Grid container spacing={1}>
                   <Grid item sm={3} align="left">
-                    <TextField
-                      id="time"
-                      type="time"
-                      value={this.state.time}
-                      format="hh:mm"
-                      onChange={this.onTimeChange}
-                      InputLabelProps={{ shrink: true }}
-                      inputProps={{ style: { textAlign: "right" }, step: 300 }}
-                    />
+
                   </Grid>
-                  <Grid item sm={9}>
+                  <Grid item sm={5}>
                     <RadioGroup
                       row
                       aria-label="position"
@@ -361,6 +353,17 @@ export default class Form extends React.Component {
                         label="Příjezd"
                       />
                     </RadioGroup>
+                  </Grid>
+                  <Grid item sm={3} align="left">
+                    <TextField
+                      id="time"
+                      type="time"
+                      value={this.state.time}
+                      format="hh:mm"
+                      onChange={this.onTimeChange}
+                      InputLabelProps={{ shrink: true }}
+                      inputProps={{ style: { textAlign: "right" }, step: 300 }}
+                    />
                   </Grid>
                 </Grid>
                 <Grid container spacing={1}>
@@ -406,7 +409,12 @@ export default class Form extends React.Component {
                           " -> " +
                           getStationById(x.to).name
                         }
-                      />
+                    />
+                    <ListItemText
+                      primary={
+                        this.state.time
+                      }
+                    />
                       <ListItemIcon>
                         <SearchIcon className="search-icon" />
                       </ListItemIcon>
