@@ -4,7 +4,7 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Divider from "@material-ui/core/Divider";
 import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
+import Tooltip from "@material-ui/core/Tooltip";
 import TextField from "@material-ui/core/TextField";
 import ListItem from "@material-ui/core/CardActions";
 import Radio from "@material-ui/core/Radio";
@@ -78,14 +78,14 @@ export default class Form extends React.Component {
 
   calculateCost = (tickets) => {
     let cost = 0;
-    tickets.forEach(x => {
+    tickets.forEach((x) => {
       console.log(x);
       if (x.tarif === 10) cost += 40 * x.numberOfPassangers;
       if (x.tarif === 20) cost += 0 * x.numberOfPassangers;
       if (x.tarif === 30) cost += 10 * x.numberOfPassangers;
-    })
+    });
     return cost;
-  }
+  };
 
   convertTarif = (number) => {
     if (number === 10) return "dospělý";
@@ -188,7 +188,15 @@ export default class Form extends React.Component {
                 >
                   <Grid item xs={11}>
                     <Grid item xs={12}>
-                    {this.state.hasError && !this.state.from ? <FormHelperText error>Toto je povinná položka!</FormHelperText> : <FormHelperText>Toto je povinná položka!</FormHelperText>}
+                      {this.state.hasError && !this.state.from ? (
+                        <FormHelperText error>
+                          Toto je povinná položka!
+                        </FormHelperText>
+                      ) : (
+                        <FormHelperText>
+                          Toto je povinná položka!
+                        </FormHelperText>
+                      )}
                       <Autocomplete
                         id="combo-box-demo"
                         options={this.destinations}
@@ -212,7 +220,15 @@ export default class Form extends React.Component {
                     </Grid>
                     <Grid item xs={12}>
                       <Box my={1}>
-                          {this.state.hasError && !this.state.from ? <FormHelperText error>Toto je povinná položka!</FormHelperText> : <FormHelperText>Toto je povinná položka!</FormHelperText>}
+                        {this.state.hasError && !this.state.from ? (
+                          <FormHelperText error>
+                            Toto je povinná položka!
+                          </FormHelperText>
+                        ) : (
+                          <FormHelperText>
+                            Toto je povinná položka!
+                          </FormHelperText>
+                        )}
                         <Autocomplete
                           id="combo-box-demo"
                           options={this.destinations}
@@ -307,8 +323,7 @@ export default class Form extends React.Component {
                   <Divider variant="middle" />
                 </Box>
                 <Grid container spacing={1}>
-                  <Grid item sm={3} align="left">
-                  </Grid>
+                  <Grid item sm={3} align="left"></Grid>
                   <Grid item sm={5}>
                     {this.state.hasError && !this.state.direction && (
                       <FormHelperText error>
@@ -317,7 +332,7 @@ export default class Form extends React.Component {
                     )}
                   </Grid>
                   <Grid item sm={4}>
-                  {this.state.hasError && !this.state.time && (
+                    {this.state.hasError && !this.state.time && (
                       <FormHelperText error>
                         Toto je povinná položka!
                       </FormHelperText>
@@ -325,9 +340,7 @@ export default class Form extends React.Component {
                   </Grid>
                 </Grid>
                 <Grid container spacing={1}>
-                  <Grid item sm={3} align="left">
-
-                  </Grid>
+                  <Grid item sm={3} align="left"></Grid>
                   <Grid item sm={5}>
                     <RadioGroup
                       row
@@ -403,12 +416,8 @@ export default class Form extends React.Component {
                           " -> " +
                           getStationById(x.to).name
                         }
-                    />
-                    <ListItemText
-                      primary={
-                        this.state.time
-                      }
-                    />
+                      />
+                      <ListItemText primary={this.state.time} />
                       <ListItemIcon>
                         <SearchIcon className="search-icon" />
                       </ListItemIcon>
@@ -424,17 +433,19 @@ export default class Form extends React.Component {
           <Grid container>
             {this.state.buyHistory.length > 0 ? (
               <Box border={1} my={3} className="result">
-                    <Grid container>
-                      <Grid item xs={12} sm={6} md={2}></Grid>
-                      <Grid item xs={12} sm={6} md={8}>
-                        <Box m={1} align='center'>
-                          <Typography> <Box fontWeight="fontWeightBold">Historie nákupů</Box></Typography>
-                        </Box>
-                      </Grid>
-                    </Grid>
-                  {this.state.buyHistory.map((x) => (
-                    <React.Fragment>
-
+                <Grid container>
+                  <Grid item xs={12} sm={6} md={2}></Grid>
+                  <Grid item xs={12} sm={6} md={8}>
+                    <Box m={1} align="center">
+                      <Typography>
+                        {" "}
+                        <Box fontWeight="fontWeightBold">Historie nákupů</Box>
+                      </Typography>
+                    </Box>
+                  </Grid>
+                </Grid>
+                {this.state.buyHistory.map((x) => (
+                  <React.Fragment>
                     <Grid container>
                       <Grid item xs={12} sm={6} md={5}>
                         <Typography align="center">
@@ -476,20 +487,24 @@ export default class Form extends React.Component {
                       <Grid item xs={12} sm={6} md={2}></Grid>
                       <Grid item xs={12} sm={6} md={8}>
                         <Box m={1} className="search-tlacitko">
-                          <Button
-                            fullWidth={true}
-                            onClick={() => this.reBuy(x)}
-                          >
-                            <AddShoppingCartIcon />
-                        <Box mx={1}>
-                          <Typography>{this.calculateCost(x.tickets)},- KČ</Typography>
-                        </Box>
-                          </Button>
+                          <Tooltip title="přejít k nákupu">
+                            <Button
+                              fullWidth={true}
+                              onClick={() => this.reBuy(x)}
+                            >
+                              <AddShoppingCartIcon />
+                              <Box mx={1}>
+                                <Typography>
+                                  {this.calculateCost(x.tickets)},- KČ
+                                </Typography>
+                              </Box>
+                            </Button>
+                          </Tooltip>
                         </Box>
                       </Grid>
                     </Grid>
-                    </React.Fragment>
-                  ))}
+                  </React.Fragment>
+                ))}
               </Box>
             ) : null}
           </Grid>

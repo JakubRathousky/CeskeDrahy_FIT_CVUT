@@ -1,30 +1,18 @@
 import React from "react";
-import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
 import Divider from "@material-ui/core/Divider";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Skeleton from "@material-ui/lab/Skeleton";
 import Checkbox from "@material-ui/core/Checkbox";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import TrainIcon from "@material-ui/icons/Train";
-import AccessTimeIcon from "@material-ui/icons/AccessTime";
+import Tooltip from '@material-ui/core/Tooltip';
 import Box from "@material-ui/core/Box";
 import InputLabel from "@material-ui/core/InputLabel";
 import MuiPhoneNumber from "material-ui-phone-number";
 
 import AddIcon from '@material-ui/icons/Add';
-import {
-  KeyboardDatePicker,
-  MuiPickersUtilsProvider,
-} from "@material-ui/pickers";
-import ConnectionHeader from "../common/ConnectionHeader";
 
 export default class Ticket extends React.Component {
   constructor(props) {

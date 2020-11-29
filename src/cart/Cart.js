@@ -1,17 +1,9 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import Divider from "@material-ui/core/Divider";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
-import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Tooltip from "@material-ui/core/Tooltip";
 import Grid from "@material-ui/core/Grid";
-import Checkbox from "@material-ui/core/Checkbox";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import InputLabel from "@material-ui/core/InputLabel";
-import MuiPhoneNumber from "material-ui-phone-number";
-import ConnectionHeader from "../common/ConnectionHeader";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import CartCard from "./CartCard";
 import SearchIcon from "@material-ui/icons/Search";
@@ -95,6 +87,8 @@ export default class Cart extends React.Component {
                 <Grid item xs={12} sm={6} md={3} align="center">
                   {!this.state.bought ? (
                     <Box border={1} borderRadius={16} className="tlacitko">
+                        <Tooltip title="zapamatuje si zadané hodnoty a umožní vybrat jiný spoj">
+
                       <Button
                         type="submit"
                         size={"large"}
@@ -106,6 +100,7 @@ export default class Cart extends React.Component {
                       >
                         <EditIcon/> <Box mx={1}> <Typography> Jet jindy </Typography></Box>
                       </Button>
+                      </Tooltip>
                     </Box>
                   ) : null}
                 </Grid>

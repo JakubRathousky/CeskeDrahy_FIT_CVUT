@@ -103,10 +103,10 @@ export default class Result extends React.Component {
     let nextDay = new Date();
     if (before == null) {
       nextDay.setDate(this.props.formState.date.getDate() - 1);
-      before = result[result.length - 1];
-      before.vlak.forEach((x) =>
-        x.stanice.forEach((y) => (y.alteredTime = this.setTime(y.cas, nextDay)))
-      );
+      // before = result[result.length - 1];
+      // before.vlak.forEach((x) =>
+      //   x.stanice.forEach((y) => (y.alteredTime = this.setTime(y.cas, nextDay)))
+      // );
     } else {
       before.vlak.forEach((x) =>
         x.stanice.forEach(
